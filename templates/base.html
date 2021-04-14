@@ -87,6 +87,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">CART</a>
                         </li>
+                        {% if request.user.is_superuser %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ADMIN</a>
+                                </li>
+                        {% endif %}
                     </ul>
                     <form class="d-flex" method="GET" action="">
                         <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
