@@ -12,11 +12,19 @@ This website is developed for users who are looking for a webshop where they buy
 
 ### User Stories
 
-See below user stories:
+These are the user stories I have focused on solving.
 
-> *- "As a user of the website, I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+As a shopper:
 
-> *- "As a user of the website, I expect to..., so I can..."*
+> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+
+As a new visitor:
+
+> *- "I expect to..., so I can..."*
+
+As a registered user:
+
+> *- "I expect to..., so I can..."*
 
 ### Strategy
 
