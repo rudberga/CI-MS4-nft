@@ -40,7 +40,24 @@
 <body>
     <!-- Navbar -->
     <header class="container-fluid fixed-top">
-        <h1 class="mx-auto text-center">nft.</h1>
+        <form class="d-flex search-bar" method="GET" action="">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+        <h1 class="mx-auto text-center title-nft">nft.</h1>
+        <div class="nav-item nav-cart">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <div class="cart">
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                            </a>
+                        </div>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -68,9 +85,6 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">MY PROFILE</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a></li>
                             </ul>
                         </li>
@@ -82,26 +96,10 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{% url 'account_login' %}">SIGN IN</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
                                 <li><a class="dropdown-item" href="{% url 'account_signup' %}">REGISTER</a></li>
                             </ul>
                         </li>
                         {% endif %}
-                        <li class="nav-item nav-cart">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="float-right">
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                            </a>
-                        </li>
                         {% if request.user.is_superuser %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">ADMIN</a>
