@@ -6,23 +6,11 @@ body {
     font-size: 4em;
 }
 
-.nav-cart {
-    float: right;
-}
-
-.nav-profile {
-    float: right;
-}
-
 .header-main {
     position: relative;
     padding-top: 7px;
     padding-bottom: 7px;
     background-color: #fff;
-}
-
-.brand-wrap {
-    text-decoration: none !important
 }
 
 .navbar-main {
