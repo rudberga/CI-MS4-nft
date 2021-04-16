@@ -21,62 +21,8 @@ body {
     background-color: #fff;
 }
 
-.logo {
-    color: #fff;
-    font-size: 25px;
-    font-weight: 600
-}
-
 .brand-wrap {
     text-decoration: none !important
-}
-
-.icon-sm {
-    width: 48px;
-    height: 48px;
-    line-height: 48px !important;
-    font-size: 20px
-}
-
-.widget-header {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative
-}
-
-.widget-header .notify {
-    position: absolute;
-    top: -3px;
-    right: -10px
-}
-
-.notify {
-    position: absolute;
-    top: -4px;
-    right: -10px;
-    display: inline-block;
-    padding: .25em .6em;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    border-radius: 3rem;
-    color: #fff;
-    background-color: #fa3434
-}
-
-.mr-3,
-.mx-3 {
-    margin-right: 1rem !important
-}
-
-.search-form {
-    border: 1px solid #ffffff !important
-}
-
-.search-button {
-    color: #007bff;
-    background-color: #ffffff;
-    border-color: #ffffff
 }
 
 .navbar-main {
@@ -84,18 +30,16 @@ body {
 }
 
 .navbar-toggler {
-    color: rgba(0, 0, 0, 0.5);
-    color: rgba(0, 0, 0, 0.5);
-    border-color: rgba(0, 0, 0, 0.1) !important
-}
-
-.navbar-toggler {
     padding: 4px;
     font-size: 1.25rem;
     line-height: 1;
     background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 0.37rem
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-toggler i {
+    font-size: 1.25em;
+    border: none;
 }
 
 .dropdown-menu {
@@ -131,24 +75,7 @@ body {
     border: 0
 }
 
-.navbar-toggler-icon {
-    background-image: url(https://img.icons8.com/ios/50/000000/menu.png)
-}
-
-.nav-link {
-    text-transform: uppercase;
-    font-weight: 400
-}
-
 .vl {
     border-left: 1px solid #fff;
     height: 100%
-}
-
-.fas {
-    color: #fff
-}
-
-.login {
-    color: white
 }

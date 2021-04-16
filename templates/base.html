@@ -59,9 +59,8 @@
                     </div>
                     <h1 class="col-md-3 text-center title-nft">nft.</h1>
                     <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
-                        <div class="d-flex justify-content-end"> <a target="_blank" href="#" data-abc="true"
-                                class="nav-link widget-header"> <i class="fas fa fa-whatsapp"></i></a> <span
-                                class="vl"></span>
+                        <div class="d-flex justify-content-end"> 
+                            <span class="vl"></span>
                             <div class="dropdown btn-group">
                                 {% if request.user.is_authenticated %}
                                     <div class="nav-item dropdown">
@@ -106,16 +105,13 @@
         </section>
         <nav class="navbar navbar-expand-md navbar-main border-bottom">
             <div class="container-fluid">
-                <form class="d-md-none my-2">
-                    <div class="input-group"> <input type="search" name="search" class="form-control"
-                            placeholder="Search" required="">
-                        <div class="input-group-append"> <button type="submit" class="btn btn-secondary"> <i
-                                    class="fa fa-search"></i> </button> </div>
-                    </div>
-                </form>
-
+                <form class="d-flex d-md-none" method="GET" action="">
+                            <input class="form-control me-2" type="text" name="q" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6"
-                    aria-expanded="false"> <span class="navbar-toggler-icon"></span> </button>
+                    aria-expanded="false"><i class="fas fa-bars"></i></button>
                 <div class="navbar-collapse collapse" id="dropdown6" style="">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
