@@ -39,12 +39,12 @@
 
 <body>
     <!-- Navbar -->
-    <header class="container-fluid fixed-top">
+    <!--  <header class="container-fluid fixed-top">
         <div class="row">
         <h1 class="col-md-2 offset-md-5 text-center title-nft">nft.</h1>
-        <div class="col-md-5 nav-item nav-cart">
+        <div class="col-md-5 nav-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="cart">
+                            <div class="nav-cart">
                                 <p class="my-0">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
@@ -54,6 +54,29 @@
                                 </p>
                             </div>
                             </a>
+                        {% if request.user.is_authenticated %}
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                PROFILE
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">MY PROFILE</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a></li>
+                            </ul>
+                        </div>
+                        {% else %}
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                SIGN IN / REGISTER
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'account_login' %}">SIGN IN</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">REGISTER</a></li>
+                            </ul>
+                        </div>
+                        {% endif %}
                         </div>
                         </div>
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -68,36 +91,14 @@
                         <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav position-absolute top-50 start-50 translate-middle">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">MARKETPLACE</a>
                         </li>
-                        {% if request.user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                PROFILE
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">MY PROFILE</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a></li>
-                            </ul>
-                        </li>
-                        {% else %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                SIGN IN / REGISTER
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'account_login' %}">SIGN IN</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">REGISTER</a></li>
-                            </ul>
-                        </li>
-                        {% endif %}
+                        
                         {% if request.user.is_superuser %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">ADMIN</a>
@@ -108,6 +109,115 @@
             </div>
         </nav>
     </header>
+    -->
+
+    <header class="section-header">
+    <section class="header-main border-bottom">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+                    <form class="d-flex" method="GET" action="">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                <h1 class="col-md-3 text-center title-nft">nft.</h1>
+                <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
+                    <div class="d-flex justify-content-end"> <a target="_blank" href="#" data-abc="true" class="nav-link widget-header"> <i class="fas fa fa-whatsapp"></i></a> <span class="vl"></span>
+                        <div class="dropdown btn-group"> 
+                        {% if request.user.is_authenticated %}
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                PROFILE
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">MY PROFILE</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a></li>
+                            </ul>
+                        </div>
+                        {% else %}
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                SIGN IN / REGISTER
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'account_login' %}">SIGN IN</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">REGISTER</a></li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title">More Info</div>
+                                    <div class="notification-list">
+                                        <div class="list-group"> <a href="affiliates" class="list-group-item list-group-item-action active" data-abc="true">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="https://img.icons8.com/nolan/100/000000/helping-hand.png" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Affiliate program</span> </div>
+                                                </div>
+                                            </a> <a href="redemption-center" class="list-group-item list-group-item-action active" data-abc="true">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="https://img.icons8.com/bubbles/100/000000/prize.png" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Redemption Center</span> </div>
+                                                </div>
+                                            </a> <a href="#" class="list-group-item list-group-item-action active" data-abc="true">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="https://img.icons8.com/ultraviolet/100/000000/medal.png" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Achievements</span> </div>
+                                                </div>
+                                            </a> <a href="#" class="list-group-item list-group-item-action active" data-abc="true">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="https://img.icons8.com/bubbles/100/000000/call-female.png" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Contact us</span> </div>
+                                                </div>
+                                            </a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <span class="vl"></span> <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <div class="nav-cart">
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-md navbar-main border-bottom">
+        <div class="container-fluid">
+            <form class="d-md-none my-2">
+                <div class="input-group"> <input type="search" name="search" class="form-control" placeholder="Search" required="">
+                    <div class="input-group-append"> <button type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i> </button> </div>
+                </div>
+            </form> <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6" aria-expanded="false"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="navbar-collapse collapse" id="dropdown6" style="">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MARKETPLACE</a>
+                        </li>
+                        
+                        {% if request.user.is_superuser %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ADMIN</a>
+                                </li>
+                        {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
     {% if messages %}
     <div class="message-container"></div>
