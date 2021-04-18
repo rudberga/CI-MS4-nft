@@ -15,7 +15,8 @@
 <div class="container">
     <div class="row">
     {% for piece in pieces %}
-        <div class="card col-sm-6" style="width: 18rem;">
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="card border-0">
         {% if piece.media %}
             <a href="">
                 <img class="card-img-top img-fluid" src="{{ piece.media.url }}" alt="{{ piece.name }}">
@@ -26,11 +27,14 @@
             </a>
         {% endif %}
             <div class="card-body">
-                <h5 class="card-title">{{ piece.name }}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title"><strong>{{ piece.name }}</strong></h5>
+                <p class="card-text"><strong>{{ piece.artist }}</strong></p>
+                <p class="card-text">Released: {{ piece.year }}</p>
+                <p class="card-text">${{ piece.price }} (Ξ{{ piece.eth_price }})</p>
+                <a href="#" class="btn btn-primary float-right">BUY</a>
             </div>
         </div>
+    </div>
     {% endfor %}
     </div>
 </div>
