@@ -18,7 +18,7 @@
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
         <div class="card border-0">
         {% if piece.media %}
-            <a href="">
+            <a href="{% url 'piece_detail' piece.id %}">
                 <img class="card-img-top img-fluid" src="{{ piece.media.url }}" alt="{{ piece.name }}">
             </a>
         {% else %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Piece
 
 
@@ -12,3 +12,15 @@ def all_pieces(request):
     }
 
     return render(request, 'pieces/pieces.html', context)
+
+
+def piece_detail(request, piece_id):
+    """ A view to show an individual piece """
+
+    piece = get_object_or_404(Piece, pk=piece_id)
+
+    context = {
+        'piece': piece,
+    }
+
+    return render(request, 'pieces/piece_detail.html', context)
