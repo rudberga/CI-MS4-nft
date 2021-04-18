@@ -72,6 +72,12 @@ body {
 
 /*--------------------------------- Footer */
 
+.footer-top {
+    padding-bottom: 0px;
+    margin-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
+
 #button-addon1 {
   color: #ffc371;
 }
@@ -79,6 +85,11 @@ body {
 .social-icons {
     color: rgba(161, 161, 161, 0.911);
     font-size: 1.5em;
+}
+
+.newsletter-input {
+    max-width: 50%;
+    margin-bottom: 25px;
 }
 
 .form-control::placeholder {
@@ -109,4 +120,12 @@ body {
 .hvr-fade:active {
     background-color: rgba(255, 255, 255, 0);
     color: rgba(0, 0, 0, 0.774);
+}
+
+/*--------------------------------- Media queries */
+
+@media only screen and (max-width: 600px) {
+  .newsletter-input {
+    max-width: 85%;
+    }
 }
