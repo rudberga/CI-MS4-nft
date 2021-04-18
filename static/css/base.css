@@ -82,6 +82,12 @@ body {
     height: 25vw;
 }
 
+/*--------------------------------- Card details */
+
+.piece-detail-img {
+    margin: 30px;
+}
+
 /*--------------------------------- Footer */
 
 .footer-top {
