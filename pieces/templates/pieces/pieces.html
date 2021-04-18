@@ -5,11 +5,33 @@
     <div class="container header-container">
         <div class="row">
             <div class="col">
-
+                <h1 class="text-center">MARKETPLACE.</h1>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+    {% for piece in pieces %}
+        <div class="card col-sm-6" style="width: 18rem;">
+        {% if piece.media %}
+            <a href="">
+                <img class="card-img-top img-fluid" src="{{ piece.media.url }}" alt="{{ piece.name }}">
+            </a>
+        {% else %}
+            <a href="">
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ piece.name }}">
+            </a>
+        {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ piece.name }}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
 {% endblock %}
