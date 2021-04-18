@@ -5,7 +5,7 @@
     <div class="container header-container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">{{ piece.name }}.</h1>
+                <h1 class="text-center">DETAILS.</h1>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
 {% block content %}
 
     <div class="row">
-        <div class="col-5 piece-detail-img">
+        <div class="col-md-5 col-sm-10 piece-detail-img">
     {% if piece.media %}
         <a href="{{ piece.media.url }}" target="_blank">
             <img class="card-img-top img-fluid h-75" src="{{ piece.media.url }}" alt="{{ piece.name }}">
@@ -25,11 +25,11 @@
         </a>
     {% endif %}
         </div>
-        <div class="col-5 offset-1">
-            <h5 class="card-title"><strong>{{ piece.name }}</strong></h5>
-                <p class="card-text"><strong>{{ piece.artist }}</strong></p>
-                <p class="card-text">Released: {{ piece.year }}</p>
-                <p class="card-text">${{ piece.price }} (Ξ{{ piece.eth_price }})</p>
+        <div class="col-md-5 offset-1 col-sm-10">
+            <h5><strong>{{ piece.name }}</strong></h5>
+                <p><strong>{{ piece.artist }}</strong></p>
+                <p>Released: {{ piece.year }}</p>
+                <p>${{ piece.price }} (Ξ{{ piece.eth_price }})</p>
                 <a href="#" class="btn btn-primary w-100">BUY</a>
                 <a href="{% url 'pieces' %}" class="btn btn-warning w-100">RETURN TO MARKETPLACE</a>
         </div>
