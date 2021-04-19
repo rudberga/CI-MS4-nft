@@ -25,9 +25,10 @@
         </a>
     {% endif %}
         </div>
-        <div class="col-md-5 offset-1 col-sm-10">
+        <div class="col-md-5 offset-1 col-sm-10 piece-detail-text">
             <h5><strong>{{ piece.name }}</strong></h5>
-                <p><strong>{{ piece.artist }}</strong></p>
+                <p><i>by</i> {{ piece.artist }}</p>
+                <hr class="w-75">
                 <p>Released: {{ piece.year }}</p>
                 <p>${{ piece.price }} (Ξ{{ piece.eth_price }})</p>
                 <a href="#" class="btn btn-primary w-100">BUY</a>

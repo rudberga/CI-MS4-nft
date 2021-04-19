@@ -88,6 +88,14 @@ body {
     margin: 30px;
 }
 
+.piece-detail-text {
+    margin-top: 50px;
+}
+
+.piece-detail-text .btn {
+    margin-top: 50px;
+}
+
 /*--------------------------------- Footer */
 
 .footer-top {
