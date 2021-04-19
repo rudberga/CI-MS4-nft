@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
+
 from .models import Category, Piece
 
 
@@ -10,8 +12,24 @@ def all_pieces(request):
     pieces = Piece.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                pieces = pieces.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            pieces = pieces.order_by(sortkey)
+        
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             pieces = pieces.filter(category__name__in=categories)
@@ -26,10 +44,13 @@ def all_pieces(request):
             queries = Q(name__icontains=query) | Q(type_of_piece__icontains=query)
             pieces = pieces.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'pieces': pieces,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'pieces/pieces.html', context)
