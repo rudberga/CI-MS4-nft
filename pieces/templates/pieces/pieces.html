@@ -13,6 +13,18 @@
 
 {% block content %}
 <div class="container">
+
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'pieces' %}?category=2d">2D</a>
+            <a href="{% url 'pieces' %}?category=3d">3D</a>
+            <a href="{% url 'pieces' %}?category=data-moshing">Data-Moshing</a>
+            <a href="{% url 'pieces' %}?category=dynamic-painting">Dynamic Painting</a>
+            <a href="{% url 'pieces' %}?category=pixel">Pixel</a>
+            <a href="{% url 'pieces' %}?category=2d,3d,data-moshing,dynamic-painting,pixel">All</a>
+        </div>
+    </div>
+
     <div class="row">
     {% for piece in pieces %}
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
