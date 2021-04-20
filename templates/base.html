@@ -64,7 +64,7 @@
                             <span class="vl"></span>
                             <div class="dropdown btn-group">
                                 {% if request.user.is_authenticated %}
-                                    <!-- Dropdown menu when logged in -->
+                                    <!-- Dropdown account menu when logged in -->
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,7 +76,7 @@
                                         </ul>
                                     </div>
                                 {% else %}
-                                    <!-- Dropdown menu when logged out -->
+                                    <!-- Dropdown account menu when logged out -->
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,7 +92,7 @@
                             <span class="vl"></span>
                             <!-- Shopping cart total amount -->
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                href="">
+                                href="{% url 'view_cart' %}">
                                 <div class="nav-cart">
                                     <p class="my-0">
                                         {% if grand_total %}
