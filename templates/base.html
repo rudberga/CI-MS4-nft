@@ -50,6 +50,7 @@
         <section class="header-main border-bottom">
             <div class="container-fluid">
                 <div class="row align-items-center">
+                    <!-- Search bar navbar -->
                     <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
                         <form class="d-flex w-50" method="GET" action="{% url 'pieces' %}">
                             <input class="form-control me-2" type="text" name="q" placeholder="Search"
@@ -59,10 +60,11 @@
                     </div>
                     <h1 class="col-md-2 text-center title-nft">nft.</h1>
                     <div class="col-lg-5 col-xl-4 col-sm-8 col-md-5 col-7">
-                        <div class="d-flex justify-content-end"> 
+                        <div class="d-flex justify-content-end">
                             <span class="vl"></span>
                             <div class="dropdown btn-group">
                                 {% if request.user.is_authenticated %}
+                                    <!-- Dropdown menu when logged in -->
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,6 +76,7 @@
                                         </ul>
                                     </div>
                                 {% else %}
+                                    <!-- Dropdown menu when logged out -->
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,9 +88,11 @@
                                         </ul>
                                     </div>
                                 {% endif %}
-                            </div> 
-                            <span class="vl"></span> 
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            </div>
+                            <span class="vl"></span>
+                            <!-- Shopping cart total amount -->
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                href="">
                                 <div class="nav-cart">
                                     <p class="my-0">
                                         {% if grand_total %}
@@ -105,11 +110,11 @@
         </section>
         <nav class="navbar navbar-expand-md navbar-main border-bottom">
             <div class="container-fluid">
+                <!-- Search bar mobile view -->
                 <form class="d-flex d-md-none" method="GET" action="{% url 'pieces' %}">
-                            <input class="form-control me-2" type="text" name="q" placeholder="Search"
-                                aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                    <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6"
                     aria-expanded="false"><i class="fas fa-bars"></i></button>
                 <div class="navbar-collapse collapse" id="dropdown6" style="">
@@ -138,47 +143,53 @@
     {% endblock %}
     <!-- Partial code for formatting CREDIT: https://bootstrapious.com/p/bootstrap-footer-with-menus-and-signup-form -->
     <!-- Footer -->
-  <footer>
-    <div class="container footer-top">
-      <div class="row py-4">
-        <div class="col-lg-8 col-md-12 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">NEWSLETTER.</h6>
-          <p class="text-muted mb-4">Want to get the latest news? Sign up to our newsletter below!</p>
-          <div class="p-1 rounded border newsletter-input">
-            <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
-              </div>
+    <footer>
+        <div class="container footer-top">
+            <div class="row py-4">
+                <div class="col-lg-8 col-md-12 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">NEWSLETTER.</h6>
+                    <p class="text-muted mb-4">Want to get the latest news? Sign up to our newsletter below!</p>
+                    <div class="p-1 rounded border newsletter-input">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1"
+                                class="form-control border-0 shadow-0">
+                            <div class="input-group-append">
+                                <button id="button-addon1" type="submit" class="btn btn-link"><i
+                                        class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">INFO.</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="#" class="text-muted">ABOUT</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">CONNECT.</h6>
+                    <ul class="list-inline mt-4">
+                        <li class="list-inline-item"><a href="https://twitter.com" target="_blank" title="twitter"><i
+                                    class="fab fa-twitter social-icons hvr-fade"></i></a></li>
+                        <li class="list-inline-item"><a href="https://facebook.com" target="_blank" title="facebook"><i
+                                    class="fab fa-facebook-f social-icons hvr-fade"></i></a></li>
+                        <li class="list-inline-item"><a href="https://instagram.com" target="_blank"
+                                title="instagram"><i class="fab fa-instagram social-icons hvr-fade"></i></a></li>
+                        <li class="list-inline-item"><a href="https://pinterest.com" target="_blank"
+                                title="pinterest"><i class="fab fa-pinterest social-icons hvr-fade"></i></a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">INFO.</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="#" class="text-muted">ABOUT</a></li>
-            <li class="mb-2"><a href="#" class="text-muted">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">CONNECT.</h6>
-          <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="https://twitter.com" target="_blank" title="twitter"><i class="fab fa-twitter social-icons hvr-fade"></i></a></li>
-            <li class="list-inline-item"><a href="https://facebook.com" target="_blank" title="facebook"><i class="fab fa-facebook-f social-icons hvr-fade"></i></a></li>
-            <li class="list-inline-item"><a href="https://instagram.com" target="_blank" title="instagram"><i class="fab fa-instagram social-icons hvr-fade"></i></a></li>
-            <li class="list-inline-item"><a href="https://pinterest.com" target="_blank" title="pinterest"><i class="fab fa-pinterest social-icons hvr-fade"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <!-- Copyrights -->
-    <div class="bg-light py-4 sticky">
-      <div class="container text-center">
-        <p class="text-muted mb-0 py-2">© 2021 Developed with &#10084; by Alexander Rudberg</p>
-      </div>
-    </div>
-  </footer>
+        <!-- Copyrights -->
+        <div class="bg-light py-4 sticky">
+            <div class="container text-center">
+                <p class="text-muted mb-0 py-2">© 2021 Developed with &#10084; by Alexander Rudberg</p>
+            </div>
+        </div>
+    </footer>
 
     {% if messages %}
         <div class="message-container"></div>
