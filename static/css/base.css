@@ -148,6 +148,13 @@ body {
     color: rgba(0, 0, 0, 0.774);
 }
 
+/*--------------------------------- Shopping Cart */
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /*--------------------------------- Media queries */
 
 @media only screen and (max-width: 600px) {
