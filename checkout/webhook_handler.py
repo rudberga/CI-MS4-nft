@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -66,7 +65,6 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
                          'Verified order already in database'),
@@ -112,7 +110,6 @@ class StripeWH_Handler:
         return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(order)
         return HttpResponse(
             content=(f'Webhook received: {event["type"]} | SUCCESS: '
                      'Created order in webhook'),
