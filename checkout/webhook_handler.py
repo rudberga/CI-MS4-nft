@@ -1,4 +1,13 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+
+from .models import Order, OrderLineItem
+from pieces.models import Piece
+
+import json
+import time
 
 
 class StripeWH_Handler:
@@ -67,7 +76,6 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
-                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
@@ -76,7 +84,7 @@ class StripeWH_Handler:
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
-                    original_cart=bag,
+                    original_cart=cart,
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(cart).items():
