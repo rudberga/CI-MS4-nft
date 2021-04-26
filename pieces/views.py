@@ -70,7 +70,17 @@ def piece_detail(request, piece_id):
 
 def add_piece(request):
     """ Add a piece to the store """
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added piece!')
+            return redirect(reverse('add_piece'))
+        else:
+            messages.error(request, 'Failed to add piece. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+        
     template = 'pieces/add_piece.html'
     context = {
         'form': form,

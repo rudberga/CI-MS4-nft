@@ -62,6 +62,9 @@
                             <div class="dropdown btn-group">
                                 {% if request.user.is_authenticated %}
                                     <!-- Dropdown account menu when logged in -->
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'add_product' %}" class="dropdown-item">Piece Management</a>
+                                    {% endif %}
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
