@@ -68,6 +68,7 @@ def piece_detail(request, piece_id):
 
     return render(request, 'pieces/piece_detail.html', context)
 
+
 def add_piece(request):
     """ Add a piece to the store """
     if request.method == 'POST':
@@ -84,6 +85,30 @@ def add_piece(request):
     template = 'pieces/add_piece.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_piece(request, piece_id):
+    """ Edit a piece in the store """
+    piece = get_object_or_404(Piece, pk=piece_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=piece)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated piece!')
+            return redirect(reverse('piece_detail', args=[piece.id]))
+        else:
+            messages.error(request, 'Failed to update piece. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=piece)
+        messages.info(request, f'You are editing {piece.name}')
+
+    template = 'pieces/edit_piece.html'
+    context = {
+        'form': form,
+        'piece': piece,
     }
 
     return render(request, template, context)
