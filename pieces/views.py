@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Category, Piece
+from .forms import ProductForm
 
 
 def all_pieces(request):
@@ -66,3 +67,13 @@ def piece_detail(request, piece_id):
     }
 
     return render(request, 'pieces/piece_detail.html', context)
+
+def add_piece(request):
+    """ Add a piece to the store """
+    form = ProductForm()
+    template = 'pieces/add_piece.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
