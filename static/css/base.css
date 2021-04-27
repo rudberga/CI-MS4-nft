@@ -75,6 +75,10 @@ body {
     margin-right: -90px;
 }
 
+.nav-link {
+    color: #707070;
+}
+
 /*--------------------------------- Cards */
 
 .card {
