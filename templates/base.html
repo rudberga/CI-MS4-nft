@@ -55,7 +55,7 @@
                             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
-                    <h1 class="col-md-2 text-center title-nft">nft.</h1>
+                    <h1 class="col-sm-2 text-center title-nft">nft.</h1>
                     <div class="col-lg-5 col-xl-4 col-sm-8 col-md-5 col-7">
                         <div class="d-flex justify-content-end">
                             <span class="vl"></span>
@@ -95,6 +95,7 @@
                                 href="{% url 'view_cart' %}">
                                 <div class="nav-cart">
                                     <p class="my-0">
+                                        <i class="fas fa-shopping-cart"></i>
                                         {% if grand_total %}
                                             ${{ grand_total|floatformat:2 }}
                                         {% else %}
@@ -108,7 +109,7 @@
                 </div>
             </div>
         </section>
-        <nav class="navbar navbar-expand-md navbar-main border-bottom">
+        <nav class="navbar navbar-expand-md navbar-main">
             <div class="container-fluid">
                 <!-- Search bar mobile view -->
                 <form class="d-flex d-md-none" method="GET" action="{% url 'pieces' %}">

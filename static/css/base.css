@@ -70,6 +70,11 @@ body {
     height: 100%
 }
 
+.nav-cart {
+    color: #707070;
+    margin-right: -90px;
+}
+
 /*--------------------------------- Cards */
 
 .card {
