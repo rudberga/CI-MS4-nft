@@ -112,3 +112,11 @@ def edit_piece(request, piece_id):
     }
 
     return render(request, template, context)
+
+
+def delete_piece(request, piece_id):
+    """ Delete a piece from the store """
+    piece = get_object_or_404(Piece, pk=piece_id)
+    piece.delete()
+    messages.success(request, 'Piece deleted!')
+    return redirect(reverse('pieces'))
