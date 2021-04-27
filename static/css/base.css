@@ -83,7 +83,13 @@ body {
 
 video {
     height: auto;
-    width: 100%;  
+    width: 90%;  
+}
+
+.top-left {
+  position: absolute;
+  top: 400px;
+  left: 100px;
 }
 
 /*--------------------------------- Cards */
