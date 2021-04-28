@@ -82,7 +82,9 @@ body {
 
 video {
     height: auto;
-    width: 90%;  
+    width: 90%; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
 }
 
 /* CREDIT for centered text: https://www.w3schools.com/howto/howto_css_image_text.asp */
