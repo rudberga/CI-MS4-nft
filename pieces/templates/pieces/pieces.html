@@ -14,20 +14,11 @@
 {% block content %}
 <div class="container">
 
-    <div class="row">
-        <div class="col">
-            <a href="{% url 'pieces' %}?category=2d">2D</a>
-            <a href="{% url 'pieces' %}?category=3d">3D</a>
-            <a href="{% url 'pieces' %}?category=data-moshing">Data-Moshing</a>
-            <a href="{% url 'pieces' %}?category=dynamic-painting">Dynamic Painting</a>
-            <a href="{% url 'pieces' %}?category=pixel">Pixel</a>
-            <a href="{% url 'pieces' %}?category=2d,3d,data-moshing,dynamic-painting,pixel">All</a>
-        </div>
-    </div>
+    
 
     <!-- UPDATE THIS TO OWN CODE! -->
     <div class="row mt-1 mb-2">
-                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="col-8 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
@@ -51,8 +42,19 @@
                 </div>
 
     <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-3">
+            <h4>CATEGORIES.</h4>
+            <ul>
+                <li><a href="{% url 'pieces' %}?category=2d">2D</a></li>
+                <li><a href="{% url 'pieces' %}?category=3d">3D</a></li>
+                <li><a href="{% url 'pieces' %}?category=data-moshing">Data-Moshing</a></li>
+                <li><a href="{% url 'pieces' %}?category=dynamic-painting">Dynamic Painting</a></li>
+                <li><a href="{% url 'pieces' %}?category=pixel">Pixel</a><a href="{% url 'pieces' %}?category=pixel">Pixel</a></li>
+                <li><a href="{% url 'pieces' %}?category=2d,3d,data-moshing,dynamic-painting,pixel">All</a></li>
+            </ul>
+        </div>
     {% for piece in pieces %}
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-3">
         <div class="card border-0">
         {% if piece.media %}
             <a href="{% url 'piece_detail' piece.id %}">
