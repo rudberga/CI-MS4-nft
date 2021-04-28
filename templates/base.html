@@ -119,12 +119,12 @@
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6"
                     aria-expanded="false"><i class="fas fa-bars"></i></button>
                 <div class="navbar-collapse collapse" id="dropdown6" style="">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto mx-auto">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'pieces' %}">MARKETPLACE</a>
+                            <a class="nav-link" href="{% url 'pieces' %}"> MARKETPLACE</a>
                         </li>
                         {% if request.user.is_superuser %}
                             <li class="nav-item">

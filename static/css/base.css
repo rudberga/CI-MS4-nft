@@ -86,10 +86,22 @@ video {
     width: 90%;  
 }
 
-.top-left {
+/* CREDIT for centered text: https://www.w3schools.com/howto/howto_css_image_text.asp */
+.btn-centered-explore {
   position: absolute;
-  top: 400px;
-  left: 100px;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  color: #fff;
+
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  color: #fff;
 }
 
 /*--------------------------------- Cards */
