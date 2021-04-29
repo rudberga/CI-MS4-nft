@@ -187,6 +187,10 @@ video {
     margin-right: auto;
 }
 
+.faq-questions p {
+    margin-top: 25px;
+}
+
 .faq-questions hr {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -196,7 +200,7 @@ video {
 
 .footer-top {
     padding-bottom: 0px;
-    margin-top: 20px;
+    margin-top: 60px;
     border-top: 1px solid #dee2e6;
 }
 
