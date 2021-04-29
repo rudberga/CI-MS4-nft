@@ -170,6 +170,28 @@ video {
     margin-top: 50px;
 }
 
+/*--------------------------------- About */
+
+
+/*--------------------------------- FAQ */
+
+.faq-title {
+    margin-top: 20px;
+}
+
+.faq-questions {
+    margin-top: 35px;
+    max-width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-questions hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 /*--------------------------------- Footer */
 
 .footer-top {
