@@ -175,7 +175,13 @@ video {
 
 /*--------------------------------- About */
 
+.about-title {
+    margin-top: 20px;
+}
 
+.about-text p {
+    margin-top: 25px;
+}
 /*--------------------------------- FAQ */
 
 .faq-title {
