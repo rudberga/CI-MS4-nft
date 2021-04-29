@@ -144,6 +144,16 @@ video {
     margin-bottom: 30px;
 }
 
+.fa-chevron-up {
+    color: #707070;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.btt-link {
+    text-decoration: none;
+}
+
 /*--------------------------------- Piece details page */
 
 .piece-detail-img {
