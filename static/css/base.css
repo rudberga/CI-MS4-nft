@@ -152,6 +152,7 @@ video {
 
 .btt-link {
     text-decoration: none;
+    border: none;
 }
 
 /*--------------------------------- Piece details page */
