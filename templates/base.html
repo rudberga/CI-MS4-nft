@@ -62,9 +62,6 @@
                             <div class="dropdown btn-group">
                                 {% if request.user.is_authenticated %}
                                     <!-- Dropdown account menu when logged in -->
-                                    {% if request.user.is_superuser %}
-                                        <a href="{% url 'add_piece' %}" class="dropdown-item">Piece Management</a>
-                                    {% endif %}
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-expanded="false">
@@ -127,9 +124,7 @@
                             <a class="nav-link" href="{% url 'pieces' %}"> MARKETPLACE</a>
                         </li>
                         {% if request.user.is_superuser %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ADMIN</a>
-                            </li>
+                            <a href="{% url 'add_piece' %}" class="dropdown-item">ADMIN</a>
                         {% endif %}
                     </ul>
                 </div>
