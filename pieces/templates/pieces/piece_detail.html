@@ -93,11 +93,12 @@
                     </form>
 
                     <div>
-                        {% for comment in comments %}
-                            <p>{{ comment.user.username }}</p>
-                            <p>{{ comment.piece_comment }}</p>
+                        {% for i in comments %}
+                            <li>{{ i.user.username }}</li>
+                            {{ i.piece_comment }}
                         {% endfor %}
                     </div>
+                    
                     <form class="form" action="{% url 'comments' %}" method="POST">
                         {% csrf_token %}
                         {#<input class="form-control qty_input" type="text"   name="comment">#}
