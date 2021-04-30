@@ -4,7 +4,7 @@
 
 <p align="center"><strong>Milestone 4 project - Full Stack Web Developer course - Code Institute</strong></p>
 
-This website is developed for users who are looking for a webshop where they buy digital art pieces.
+This website is developed for users who are looking for a platform where they can buy digital art pieces as an NFT.
 
 [Link to deployed website! (COMING!)]()
  
@@ -14,13 +14,14 @@ This website is developed for users who are looking for a webshop where they buy
 
 These are the user stories I have focused on solving.
 
+As a new visitor:
+
+> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+
 As a shopper:
 
 > *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
-
-As a new visitor:
-
-> *- "I expect to..., so I can..."*
 
 As a registered user:
 
