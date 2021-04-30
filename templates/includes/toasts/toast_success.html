@@ -1,7 +1,7 @@
 <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-white text-dark">
-        <strong class="mr-auto">Success!</strong>
+        <strong class="mr-auto">Success! &#9996;</strong>
         <button type="button" class="" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true"><i class="fas fa-times"></i></span>
         </button>
@@ -27,7 +27,6 @@
                         </div>
                         <div class="col-9">
                             <p class="my-0"><strong>{{ item.piece.name }}</strong></p>
-                            <p class="my-0 small">Size: {% if item.piece.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                     </div>
@@ -39,11 +38,8 @@
                         Total: 
                         <span class="float-right">${{ total|floatformat:2 }}</span>
                     </p></strong>
-                    <a href="{% url 'view_cart' %}" class="btn btn-black btn-block rounded-0">
-                        <span class="text-uppercase">Go To Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
+                    <a href="{% url 'view_cart' %}" class="btn rounded-0 btn-checkout">
+                        <span class="text-uppercase">CHECKOUT</span>
                     </a>
                 </div>
             </div>

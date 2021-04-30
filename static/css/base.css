@@ -268,8 +268,8 @@ video {
 
 .message-container {
     position: fixed;
-    top: 72px;
-    right: 15px;
+    top: 100px;
+    right: 20px;
     z-index: 99999999999;
 }
 
@@ -278,7 +278,7 @@ video {
 }
 
 .toast-capper {
-    height: 2px;
+    height: 4px;
 }
 
 .bag-notification-wrapper {
@@ -290,11 +290,15 @@ video {
 .toast-header button {
     background-color: transparent;
     border: none;
-    float: right;
+    margin-left: auto;
 }
 
 .toast-header button i {
     font-size: 1.5em;
+}
+
+.btn-checkout {
+    float: right;
 }
 
 /*--------------------------------- Media queries */
