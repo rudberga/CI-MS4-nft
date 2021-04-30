@@ -10,4 +10,4 @@ def add_comments(request):
     piece_name = request.POST.get('piece_name')
     piece_obj = Piece.objects.get(id=piece_name)
     Comment.objects.create(user=request.user, piece=piece_obj, piece_comment=comment)
-    return redirect('/')
+    return redirect('pieces')

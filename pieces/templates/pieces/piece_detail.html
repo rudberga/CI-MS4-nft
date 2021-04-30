@@ -81,6 +81,24 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
+
+                    <div>
+                        {% for comment in comments %}
+                            <p>{{ comment.user.username }}</p>
+                            <p>{{ comment.piece_comment }}</p>
+                        {% endfor %}
+                    </div>
+                    <form class="form" action="{% url 'comments' %}" method="POST">
+                        {% csrf_token %}
+                        {#<input class="form-control qty_input" type="text"   name="comment">#}
+                        <div class="form-outline">
+                          <textarea class="form-control" name="comment" rows="2"></textarea>
+                          <label class="form-label" for="comment">Comment</label>
+                        </div>
+                        <input type="hidden" name="piece_name" value="{{ piece.id }}">
+                        <input type="submit" class="btn btn-success" value="Submit">
+
+                    </form>
                 <!--   
                 <a href="#" class="btn btn-primary w-100">BUY</a>
                 <a href="{% url 'pieces' %}" class="btn btn-warning w-100">RETURN TO MARKETPLACE</a>
