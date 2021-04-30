@@ -82,6 +82,16 @@
                         </div>
                     </form>
 
+                    <form class="form" action="{% url 'add_fav' %}" method="POST" style="margin-top: 10px; margin-bottom: 10px">
+                        {% csrf_token %}
+                        <input type="hidden" name="piece_name" value="{{ piece.id }}">
+                        {% if fav_product.status == True %}
+                            <input type="submit" class="btn btn-success" value="Remove Favourite">
+                        {% else %}
+                            <input type="submit" class="btn btn-success" value="Add To Favourite">
+                        {% endif %}
+                    </form>
+
                     <div>
                         {% for comment in comments %}
                             <p>{{ comment.user.username }}</p>
