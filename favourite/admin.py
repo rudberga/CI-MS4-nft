@@ -1,4 +1,4 @@
 from django.contrib import admin
-from comments.models import Favourite
+from favourite.models import Favourite
 
 admin.site.register(Favourite)
