@@ -186,8 +186,14 @@ I have therefore focused on below palette
     
 **Database**
 
-- [MongoDB](https://www.mongodb.com/)
-    - Document based data framework to store the applications data
+- [PostgreSQL](https://www.postgresql.org/)
+    - Database used in deployment
+
+- [SQLite3](https://www.sqlite.org/index.html)
+    - Database used in development
+
+- [AWS S3](https://aws.amazon.com/)
+    - Database used in deployment for static and media files
 
 **Frameworks**
 
