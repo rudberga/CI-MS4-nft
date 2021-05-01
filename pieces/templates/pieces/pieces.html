@@ -54,7 +54,7 @@
             </ul>
         </div>
     {% for piece in pieces %}
-    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-3">
+    <div class="col-sm-12 col-md-8 col-lg-4 col-xl-3">
         <div class="card border-0">
         {% if piece.media %}
             <a href="{% url 'piece_detail' piece.id %}">
@@ -67,7 +67,6 @@
         {% endif %}
             <div class="card-body">
             
-            <!-- UPDATE THIS TO OWN CODE! -->
             {% if piece.category %}
                 <p class="small mt-1 mb-0">
                     <a class="text-muted" href="{% url 'pieces' %}?category={{ piece.category.name }}">
