@@ -93,8 +93,8 @@
                         </div>
                     </form>
                     <div class="comment-field">
-                    <h3>User comments</h3>
                     {% if request.user.is_authenticated %}
+                    <h3>User comments</h3>
                         <div>
                             {% for i in comments %}
                                 <p><strong>{{ i.user.username }}</strong> - <small><i>{{ i.pub_date }}</i></small></p>
