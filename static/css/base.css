@@ -296,6 +296,25 @@ body {
     color: rgba(0, 0, 0, 0.774);
 }
 
+.hvr-fade-categories li {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-transition-property: color, rgb(255, 255, 255);
+    transition-property: color, rgb(255, 255, 255);
+    max-width: 50%;
+}
+
+.hvr-fade-categories li:hover,
+.hvr-fade-categories li:focus,
+.hvr-fade-categories li:active {
+    background-color: rgb(173, 173, 173);
+    color: rgb(255, 255, 255);
+    max-width: 50%;
+}
+
 /*--------------------------------- Shopping Cart */
 
 .update-link,
