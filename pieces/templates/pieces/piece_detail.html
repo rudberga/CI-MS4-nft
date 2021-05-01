@@ -81,35 +81,36 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-
-                    <form class="form" action="{% url 'add_fav' %}" method="POST" style="margin-top: 10px; margin-bottom: 10px">
-                        {% csrf_token %}
-                        <input type="hidden" name="piece_name" value="{{ piece.id }}">
-                        {% if fav_product.status == True %}
-                            <input type="submit" class="btn btn-success" value="Remove Favourite">
-                        {% else %}
-                            <input type="submit" class="btn btn-success" value="Add To Favourite">
-                        {% endif %}
-                    </form>
-
-                    <div>
-                        {% for i in comments %}
-                            <li>{{ i.user.username }}</li>
-                            {{ i.piece_comment }}
-                        {% endfor %}
-                    </div>
-                    
-                    <form class="form" action="{% url 'comments' %}" method="POST">
-                        {% csrf_token %}
-                        {#<input class="form-control qty_input" type="text"   name="comment">#}
-                        <div class="form-outline">
-                          <textarea class="form-control" name="comment" rows="2"></textarea>
-                          <label class="form-label" for="comment">Comment</label>
+                    {% if request.user.is_authenticated %}
+                        <form class="form" action="{% url 'add_fav' %}" method="POST" style="margin-top: 10px; margin-bottom: 10px">
+                            {% csrf_token %}
+                            <input type="hidden" name="piece_name" value="{{ piece.id }}">
+                            {% if fav_product.status == True %}
+                                <input type="submit" class="btn btn-success" value="Remove Favourite">
+                            {% else %}
+                                <input type="submit" class="btn btn-success" value="Add To Favourite">
+                            {% endif %}
+                        </form>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <div>
+                            {% for i in comments %}
+                                <li>{{ i.user.username }}</li>
+                                {{ i.piece_comment }}
+                            {% endfor %}
                         </div>
-                        <input type="hidden" name="piece_name" value="{{ piece.id }}">
-                        <input type="submit" class="btn btn-success" value="Submit">
-
-                    </form>
+                        
+                        <form class="form" action="{% url 'comments' %}" method="POST">
+                            {% csrf_token %}
+                            {#<input class="form-control qty_input" type="text"   name="comment">#}
+                            <div class="form-outline">
+                            <textarea class="form-control" name="comment" rows="2"></textarea>
+                            <label class="form-label" for="comment">Comment</label>
+                            </div>
+                            <input type="hidden" name="piece_name" value="{{ piece.id }}">
+                            <input type="submit" class="btn btn-success" value="Submit">
+                        </form>
+                    {% endif %}
         </div>
     </div>
 
