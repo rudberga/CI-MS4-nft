@@ -197,10 +197,10 @@ I have therefore focused on below palette
 
 **Frameworks**
 
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-    - Framework used with python to create the application. Imported via app.py
+- [Django](https://www.djangoproject.com/)
+    - Framework used with python to create the whole application
 
-- [Materialize](https://materializecss.com/)
+- [Bootstrap](https://getbootstrap.com/)
     - Framework used in order to improve the structure and design of the website. Imported via CDN
 
 - [jQuery](https://jquery.com/)
@@ -230,11 +230,14 @@ I have therefore focused on below palette
 - [Unsplash](https://unsplash.com/)
    - Used for images in the project. Imported locally through assets/img
 
-- [Canva](https://www.canva.com/)
-   - Used for making main icon. Imported locally through assets/img
+- [Stripe](https://stripe.com/)
+   - Used for payments in the application
 
-- [Jinja](http://jinja.palletsprojects.com/)
-   - Templating language used in this app
+- [Stripe](https://stripe.com/)
+   - Used for payments in the application
+
+- [Balsamiq](https://balsamiq.com/)
+   - Used for creating wireframes for the project
    
 
 ## Testing 
