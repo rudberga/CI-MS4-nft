@@ -44,13 +44,25 @@ As a shopper:
 > 
 > *- "I expect to be able to see larger image when I click on the piece , so I can make a decision if I like it or not"*
 > 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to see the cart updating as I add items, so I can easily see the total and what I have in my cart without going to the cart page"*
 > 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to see a summarized shopping cart page, so I can remove or update amount of the piece I want to buy"*
+> 
+> *- "I expect to be able to see all information and grand total on checkout page, so I can get a simple overview over what I need to pay"*
+> 
+> *- "I expect to be able to pay with credit card in a secure way, so I can feel safe when I go through with the purchase"*
+> 
+> *- "I expect to be able to see a order summary after order is done, so I can double check that everything is correct"*
 
 As a registered user:
 
 > *- "I expect to be able to leave comments on each piece, so I can see what other users think and share my own thoughts"*
+> 
+> *- "I expect to..., so I can..."*
+> 
+> *- "I expect to..., so I can..."*
+> 
+> *- "I expect to..., so I can..."*
 
 As an admin:
 
