@@ -101,7 +101,7 @@ The design and layout on this website will be very minimal with very little colo
 
 ### Skeleton
 
-[Wireframe (COMING!)]()
+[Wireframe](https://github.com/rudberga/CI-MS4-nft/blob/master/static/docs/ci-ms4-nft.pdf)
 
 8 pages included in the wireframe which are:
 - Landing page
@@ -117,17 +117,19 @@ The design and layout on this website will be very minimal with very little colo
 
 #### Main inspiration
  
-text about inspiration for design here.
+I took my main inspiration for the design of this website from how art galleries usually looks. The approach is very often less is more and that really works in this e-commerce website. I focused very much on black and white as well as using horizontal lines to create borders and lines to make divisions in the page. The way that the website comes alive is through the different art pieces on the website, therefore creating a "gallery-like" feeling.
 
 #### Fonts
 
-text here
+I have used one font in this project but I played with strong, italic and regular to make it read differently.
 
-#### Font name
+#### RUBIK
 
-info about font
+This font has a sort of playful future looks to it and I believe it fits my website as it does not look stiff and fits the digital art image.
 
-[FONT NAME (image coming soon)]()
+![RUBIK]()
+
+#### Emojis
 
 #### Colors
 
