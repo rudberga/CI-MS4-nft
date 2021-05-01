@@ -58,15 +58,17 @@ As a registered user:
 
 > *- "I expect to be able to leave comments on each piece, so I can see what other users think and share my own thoughts"*
 > 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to save my address information, so I can receive the proof of purchase that the store sends to your home"*
 > 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to add my favorite pieces to my profile, so I can save them for when I want to purchase them"*
 > 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to see my order history, so I can go back and check the information whenever I need"*
 
 As an admin:
 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to edit, add, update and remove pieces in the store, so I can manage the pieces directly on the website"*
+> 
+> *- "I expect to be able to edit, add, update and remove other data in the admin panel, so I can manage this data in a easy to understand environment"*
 
 ### Strategy
 
