@@ -103,8 +103,15 @@ The design and layout on this website will be very minimal with very little colo
 
 [Wireframe (COMING!)]()
 
-6 pages included in the wireframe which are:
-- page
+8 pages included in the wireframe which are:
+- Landing page
+- Marketplace page
+- Product page
+- Shopping cart page
+- Checkout page
+- About page
+- FAQ page
+- Profile page
 
 ### Surface
 
