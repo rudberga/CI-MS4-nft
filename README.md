@@ -25,6 +25,8 @@ As a new visitor:
 > *- "I expect to find a FAQ page, so I can get an answer to the most common questions about the website"*
 > 
 > *- "I expect to be able to open the website on any device, so that I will be able to read it on any screen size"*
+> 
+> *- "I expect to be able to find where to register an account, so that I will be able to take advantage of benefits"*
 
 As a shopper:
 
@@ -34,9 +36,23 @@ As a shopper:
 > 
 > *- "I expect to be able to sort pieces by category, so I can find what to buy"*
 > 
-> *- "I expect to be able to see a image of each piece, so I can find what to buy"*
+> *- "I expect to be able to see a image of each piece, so I can find what to buy and see what piece interests me"*
+> 
+> *- "I expect to be able to sort all of the pieces, so I can find pieces that fits my criterias"*
+> 
+> *- "I expect to be able to see summarized information (price, artist etc.) about the piece without having to go into details page, so I can quickly see if the piece interests me"*
+> 
+> *- "I expect to be able to see larger image when I click on the piece , so I can make a decision if I like it or not"*
+> 
+> *- "I expect to..., so I can..."*
+> 
+> *- "I expect to..., so I can..."*
 
 As a registered user:
+
+> *- "I expect to be able to leave comments on each piece, so I can see what other users think and share my own thoughts"*
+
+As an admin:
 
 > *- "I expect to..., so I can..."*
 
