@@ -78,8 +78,8 @@ Project goals:
 
 - Design a website which do not take away from the art pieces themselves, should be very simple with minimal approach
 - Present an easy and smooth experience for users to buy digital art pieces, from finding a piece until paying for it
-- text here
-- text here
+- Present a way for users to comment on and add pieces as their favorites, creating a sort of community feeling
+- Give the user a simple way of registering, logging in and logging out
 
 ### Scope
 
