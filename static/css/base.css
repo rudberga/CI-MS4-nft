@@ -199,6 +199,14 @@ body {
     font-size: 1.25em;
 }
 
+.comment-field {
+    margin-top: 40px;
+}
+
+.comment-field h3 {
+    margin-bottom: 30px;
+}
+
 /*--------------------------------- About */
 
 .about-title {

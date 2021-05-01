@@ -92,12 +92,13 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-                    
+                    <div class="comment-field">
+                    <h3>User comments</h3>
                     {% if request.user.is_authenticated %}
                         <div>
                             {% for i in comments %}
-                                <li>{{ i.user.username }}</li>
-                                {{ i.piece_comment }}
+                                <p><strong>{{ i.user.username }}</strong> - <small><i>{{ i.pub_date }}</i></small></p>
+                                <p>{{ i.piece_comment }}</p>
                             {% endfor %}
                         </div>
                         
@@ -105,13 +106,14 @@
                             {% csrf_token %}
                             {#<input class="form-control qty_input" type="text"   name="comment">#}
                             <div class="form-outline">
-                            <textarea class="form-control" name="comment" rows="2"></textarea>
-                            <label class="form-label" for="comment">Comment</label>
+                            <textarea class="form-control w-75" name="comment" rows="2"></textarea>
+                            <label class="form-label" for="comment"></label>
                             </div>
                             <input type="hidden" name="piece_name" value="{{ piece.id }}">
-                            <input type="submit" class="btn btn-success" value="Submit">
+                            <input type="submit" class="btn btn-success" value="Post">
                         </form>
                     {% endif %}
+                </div>
         </div>
     </div>
 
