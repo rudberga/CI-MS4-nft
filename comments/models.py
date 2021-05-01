@@ -8,6 +8,3 @@ class Comment(models.Model):
     piece = models.ForeignKey(Piece, on_delete=models.CASCADE)
     piece_comment = models.CharField(max_length=200)
     pub_date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.pub_date
