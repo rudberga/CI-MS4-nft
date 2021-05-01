@@ -6,7 +6,7 @@
 
 <p align="center"><strong>Milestone 4 project - Full Stack Web Developer course - Code Institute</strong></p>
 
-This website is developed for users who are looking for a platform where they can buy digital art pieces as an NFT.
+<p align="center">This website is developed for users who are looking for a platform where they can buy digital art pieces as an NFT.</p>
 
 [Link to deployed website!](https://rudberga-nft.herokuapp.com/)
  
@@ -72,12 +72,12 @@ As an admin:
 
 ### Strategy
 
-The main goal of this website is to ...
+The main goal of this e-commerce website is to be a place where people who wants to buy digital art, will be able to do it. The users will also be able to comment what they think about different pieces and therefore it will create a sort of community feeling. Users will be able to add their favorite pieces to their profile if they want to save something for later.
 
 Project goals: 
 
-- text here
-- text here
+- Design a website which do not take away from the art pieces themselves, should be very simple with minimal approach
+- Present an easy and smooth experience for users to buy digital art pieces, from finding a piece until paying for it
 - text here
 - text here
 
