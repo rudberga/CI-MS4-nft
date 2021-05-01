@@ -2,11 +2,13 @@
 
 ### MOCKUPS HERE
 
+![]()
+
 <p align="center"><strong>Milestone 4 project - Full Stack Web Developer course - Code Institute</strong></p>
 
 This website is developed for users who are looking for a platform where they can buy digital art pieces as an NFT.
 
-[Link to deployed website! (COMING!)]()
+[Link to deployed website!](https://rudberga-nft.herokuapp.com/)
  
 ## UX
 
