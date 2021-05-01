@@ -97,7 +97,7 @@ The features of this website will let the users:
 
 ### Structure
 
-Explanation of design here
+The design and layout on this website will be very minimal with very little color and mostly black and white. The reason for this is because we do not want to take away from the digital art by putting too much focus on the websites own design. It will look modern, clean and inviting in combination with the different art pieces.
 
 ### Skeleton
 
