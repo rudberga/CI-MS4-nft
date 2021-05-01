@@ -54,7 +54,7 @@
                         <form class="d-flex w-75" method="GET" action="{% url 'pieces' %}">
                             <input class="form-control search form me-2 no-border" type="text" name="q"
                                 placeholder="Search" aria-label="Search">
-                            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                            <button class="btn" type="submit"><i class="fas fa-search hvr-fade"></i></button>
                         </form>
                     </div>
                     <h1 class="col-sm text-center title-nft mx-auto">nft.</h1>
@@ -65,7 +65,7 @@
                                 {% if request.user.is_authenticated %}
                                     <!-- Dropdown account menu when logged in -->
                                     <div class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle nav-profile hvr-fade" href="#" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-expanded="false">
                                             PROFILE
                                         </a>
@@ -79,7 +79,7 @@
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle nav-profile" href="#" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="fas fa-user"></i>
+                                            <i class="fas fa-user hvr-fade"></i>
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a class="dropdown-item" href="{% url 'account_login' %}">SIGN IN</a></li>
@@ -93,8 +93,8 @@
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                 href="{% url 'view_cart' %}">
                                 <div class="nav-cart">
-                                    <p class="my-0">
-                                        <i class="fas fa-shopping-cart"></i>
+                                    <p class="my-0 hvr-fade">
+                                        <i class="fas fa-shopping-cart hvr-fade"></i>
                                         {% if grand_total %}
                                             ${{ grand_total|floatformat:2 }}
                                         {% else %}
@@ -121,10 +121,10 @@
                 <div class="navbar-collapse collapse" id="dropdown6" style="">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">HOME</a>
+                            <a class="nav-link active hvr-fade" aria-current="page" href="{% url 'home' %}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'pieces' %}"> MARKETPLACE</a>
+                            <a class="nav-link hvr-fade" href="{% url 'pieces' %}"> MARKETPLACE</a>
                         </li>
                         {% if request.user.is_superuser %}
                             <a href="{% url 'add_piece' %}" class="dropdown-item">ADMIN</a>
@@ -162,8 +162,8 @@
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <h6 class="text-uppercase font-weight-bold mb-4">INFO.</h6>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="{% url 'about' %}" class="text-muted">ABOUT</a></li>
-                        <li class="mb-2"><a href="{% url 'faq' %}" class="text-muted">FAQ</a></li>
+                        <li class="mb-2"><a href="{% url 'about' %}" class="hvr-fade footer-links">ABOUT</a></li>
+                        <li class="mb-2"><a href="{% url 'faq' %}" class="hvr-fade footer-links">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">

@@ -237,6 +237,11 @@ video {
   box-shadow: none;
 }
 
+.footer-links{
+    color: #707070;
+    text-decoration: none;
+}
+
 /*--------------------------------- Hover effects */
 /*CREDIT for Hover over social links: https://ianlunn.github.io/Hover/#effects*/
 
