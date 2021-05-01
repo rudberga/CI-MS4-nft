@@ -2,11 +2,13 @@
 
 ### MOCKUPS HERE
 
+![]()
+
 <p align="center"><strong>Milestone 4 project - Full Stack Web Developer course - Code Institute</strong></p>
 
-This website is developed for users who are looking for a platform where they can buy digital art pieces as an NFT.
+<p align="center">This website is developed for users who are looking for a platform where they can buy digital art pieces as an NFT.</p>
 
-[Link to deployed website! (COMING!)]()
+[Link to deployed website!](https://rudberga-nft.herokuapp.com/)
  
 ## UX
 
@@ -17,24 +19,65 @@ These are the user stories I have focused on solving.
 As a new visitor:
 
 > *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
-> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+> 
+> *- "I expect to find an about page, so I can get a summarized information about the website"*
+> 
+> *- "I expect to find a FAQ page, so I can get an answer to the most common questions about the website"*
+> 
+> *- "I expect to be able to open the website on any device, so that I will be able to read it on any screen size"*
+> 
+> *- "I expect to be able to find where to register an account, so that I will be able to take advantage of benefits"*
 
 As a shopper:
 
-> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+> *- "I expect to find a page with all pieces, so I can get an overview over what is for sale"*
+> 
+> *- "I expect to be able to search pieces, so I can find what I want and buy it"*
+> 
+> *- "I expect to be able to sort pieces by category, so I can find what to buy"*
+> 
+> *- "I expect to be able to see a image of each piece, so I can find what to buy and see what piece interests me"*
+> 
+> *- "I expect to be able to sort all of the pieces, so I can find pieces that fits my criterias"*
+> 
+> *- "I expect to be able to see summarized information (price, artist etc.) about the piece without having to go into details page, so I can quickly see if the piece interests me"*
+> 
+> *- "I expect to be able to see larger image when I click on the piece , so I can make a decision if I like it or not"*
+> 
+> *- "I expect to be able to see the cart updating as I add items, so I can easily see the total and what I have in my cart without going to the cart page"*
+> 
+> *- "I expect to be able to see a summarized shopping cart page, so I can remove or update amount of the piece I want to buy"*
+> 
+> *- "I expect to be able to see all information and grand total on checkout page, so I can get a simple overview over what I need to pay"*
+> 
+> *- "I expect to be able to pay with credit card in a secure way, so I can feel safe when I go through with the purchase"*
+> 
+> *- "I expect to be able to see a order summary after order is done, so I can double check that everything is correct"*
 
 As a registered user:
 
-> *- "I expect to..., so I can..."*
+> *- "I expect to be able to leave comments on each piece, so I can see what other users think and share my own thoughts"*
+> 
+> *- "I expect to be able to save my address information, so I can receive the proof of purchase that the store sends to your home"*
+> 
+> *- "I expect to be able to add my favorite pieces to my profile, so I can save them for when I want to purchase them"*
+> 
+> *- "I expect to be able to see my order history, so I can go back and check the information whenever I need"*
+
+As an admin:
+
+> *- "I expect to be able to edit, add, update and remove pieces in the store, so I can manage the pieces directly on the website"*
+> 
+> *- "I expect to be able to edit, add, update and remove other data in the admin panel, so I can manage this data in a easy to understand environment"*
 
 ### Strategy
 
-The main goal of this website is to ...
+The main goal of this e-commerce website is to be a place where people who wants to buy digital art, will be able to do it. The users will also be able to comment what they think about different pieces and therefore it will create a sort of community feeling. Users will be able to add their favorite pieces to their profile if they want to save something for later.
 
 Project goals: 
 
-- text here
-- text here
+- Design a website which do not take away from the art pieces themselves, should be very simple with minimal approach
+- Present an easy and smooth experience for users to buy digital art pieces, from finding a piece until paying for it
 - text here
 - text here
 
