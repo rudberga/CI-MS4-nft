@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
+from favourite.models import Favourite
 from .models import UserProfile
 from .forms import UserProfileForm
 
@@ -21,11 +23,13 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
+    fav_list = Favourite.objects.filter(user=request.user, status=True)
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'fav_list': fav_list,
         'on_profile_page': True
     }
 
