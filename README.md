@@ -78,27 +78,40 @@ Project goals:
 
 - Design a website which do not take away from the art pieces themselves, should be very simple with minimal approach
 - Present an easy and smooth experience for users to buy digital art pieces, from finding a piece until paying for it
-- text here
-- text here
+- Present a way for users to comment on and add pieces as their favorites, creating a sort of community feeling
+- Give the user a simple way of registering, logging in and logging out
 
 ### Scope
 
 The features of this website will let the users:
 
-- text here
-- text here
-- text here
+- Search for pieces in the search bar they would be interested in buying
+- Register an user account to make the shopping experience more smooth
+- Add favourites to your own user profile
+- Comment on pieces in order to share opinions and read other comments
+- Smoothly and safely purchase their piece with credit card
+- Filter pieces based on categories
+- Sort pieces based on price, name or category
+- Have the detailed order history saved on the profile page
+- Save user details on user profile page which will be automatically filled in when checking out
 
 ### Structure
 
-Explanation of design here
+The design and layout on this website will be very minimal with very little color and mostly black and white. The reason for this is because we do not want to take away from the digital art by putting too much focus on the websites own design. It will look modern, clean and inviting in combination with the different art pieces.
 
 ### Skeleton
 
 [Wireframe (COMING!)]()
 
-6 pages included in the wireframe which are:
-- page
+8 pages included in the wireframe which are:
+- Landing page
+- Marketplace page
+- Product page
+- Shopping cart page
+- Checkout page
+- About page
+- FAQ page
+- Profile page
 
 ### Surface
 
