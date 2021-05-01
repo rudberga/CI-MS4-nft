@@ -185,6 +185,20 @@ body {
     margin-top: 50px;
 }
 
+.heart-icon {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 90, 90);
+    font-size: 1.25em;
+}
+
+.broken-heart-icon {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 90, 90);
+    font-size: 1.25em;
+}
+
 /*--------------------------------- About */
 
 .about-title {

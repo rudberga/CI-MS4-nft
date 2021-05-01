@@ -34,6 +34,17 @@
         <div class="col-md-5 offset-1 col-sm-10 piece-detail-text">
             <h5><strong>{{ piece.name }}</strong></h5>
                 <p><i>by</i> {{ piece.artist }}</p>
+                {% if request.user.is_authenticated %}
+                        <form class="form" action="{% url 'add_fav' %}" method="POST" style="margin-top: 10px; margin-bottom: 10px">
+                            {% csrf_token %}
+                            <input type="hidden" name="piece_name" value="{{ piece.id }}">
+                            {% if fav_product.status == True %}
+                                <button type="submit" class="broken-heart-icon" title="Remove from favourites"><i class="fas fa-heart-broken"></i></button>
+                            {% else %}
+                                <button type="submit" class="heart-icon" title="Add to favourites"><i class="fas fa-heart"></i></button>
+                            {% endif %}
+                        </form>
+                    {% endif %}
                 <hr class="w-75">
                 <p>Released: {{ piece.year }}</p>
                 <p>${{ piece.price }} (Ξ{{ piece.eth_price }})</p>
@@ -81,17 +92,7 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-                    {% if request.user.is_authenticated %}
-                        <form class="form" action="{% url 'add_fav' %}" method="POST" style="margin-top: 10px; margin-bottom: 10px">
-                            {% csrf_token %}
-                            <input type="hidden" name="piece_name" value="{{ piece.id }}">
-                            {% if fav_product.status == True %}
-                                <input type="submit" class="btn btn-success" value="Remove Favourite">
-                            {% else %}
-                                <input type="submit" class="btn btn-success" value="Add To Favourite">
-                            {% endif %}
-                        </form>
-                    {% endif %}
+                    
                     {% if request.user.is_authenticated %}
                         <div>
                             {% for i in comments %}

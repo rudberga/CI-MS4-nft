@@ -19,4 +19,4 @@ def add_to_fav(request):
             fav_product.save()
         else:
             Favourite.objects.create(user=request.user, piece=piece_obj, status=True)
-    return redirect('/')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
