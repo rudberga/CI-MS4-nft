@@ -85,9 +85,15 @@ Project goals:
 
 The features of this website will let the users:
 
-- text here
-- text here
-- text here
+- Search for pieces in the search bar they would be interested in buying
+- Register an user account to make the shopping experience more smooth
+- Add favourites to your own user profile
+- Comment on pieces in order to share opinions and read other comments
+- Smoothly and safely purchase their piece with credit card
+- Filter pieces based on categories
+- Sort pieces based on price, name or category
+- Have the detailed order history saved on the profile page
+- Save user details on user profile page which will be automatically filled in when checking out
 
 ### Structure
 
