@@ -98,29 +98,41 @@ body {
 
 /*--------------------------------- Home */
 
-video {
-    height: auto;
-    width: 90%; 
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-}
-
-/* CREDIT for centered text: https://www.w3schools.com/howto/howto_css_image_text.asp */
-.btn-centered-explore {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 70px;
+.btn-explore {
+    background-color: transparent;
+    border: none;
     color: #fff;
-    z-index: 1;
+    font-size: 4em;
+    text-decoration: underline;
 }
 
-.bottom-right {
+/*CREDIT for responsive button over video: https://stackoverflow.com/questions/35647044/boostrap-how-to-stick-a-button-over-an-image-when-re-sizing/35676474 */
+
+.video-wrapper {
+  position: relative;
+}
+
+.video-responsive {
+    margin-top: 20px;
+  width: 85%;
+  height: auto;
+}
+
+.video-overlay {
   position: absolute;
-  bottom: 8px;
-  right: 16px;
-  color: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.video-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 30%;
 }
 
 /*--------------------------------- Pieces page */
