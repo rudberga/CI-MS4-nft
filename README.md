@@ -19,11 +19,16 @@ These are the user stories I have focused on solving.
 As a new visitor:
 
 > *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
-> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+> *- "I expect to find an about page, so I can get a summarized information about the website"*
+> *- "I expect to find a FAQ page, so I can get an answer to the most common questions about the website"*
+> *- "I expect to be able to open the website on any device, so that I will be able to read it on any screen size"*
 
 As a shopper:
 
-> *- "I expect to find a layout which is user friendly, so I easily can navigate throughout the website"*
+> *- "I expect to find a page with all pieces, so I can get an overview over what is for sale"*
+> *- "I expect to be able to search pieces, so I can find what I want and buy it"*
+> *- "I expect to be able to sort pieces by category, so I can find what to buy"*
+> *- "I expect to be able to see a image of each piece, so I can find what to buy"*
 
 As a registered user:
 
