@@ -123,25 +123,25 @@ I took my main inspiration for the design of this website from how art galleries
 
 I have used one font in this project but I played with strong, italic and regular to make it read differently.
 
-#### RUBIK
+#### Rubik
 
 This font has a sort of playful future looks to it and I believe it fits my website as it does not look stiff and fits the digital art image.
 
-![RUBIK]()
+![RUBIK](https://github.com/rudberga/CI-MS4-nft/blob/master/static/img/rubik_font.png?raw=true)
 
 #### Emojis
 
+I have chosen to implement a couple of emojis in this project to make it pop. As I am approaching the design in a very minimalistic matter, I believe it adds that extra feeling of fun to it when you browse the different pages.
+
+:v: :smiley: :wave: :star2: :hushed: :chart_with_upwards_trend: :lock_with_ink_pen:
+
 #### Colors
 
-The color theme I have decided to go with focuses mainly on blue with green hints.
+The color theme is solely focused on black, white and grey. The reason for this is, as written above, I do not wanna take away from the art pieces.
 
-I have therefore focused on below colors:
+I have therefore focused on below palette
 
-- #d0e8f2
-- #79a3b1
-- #456268
-
-![Colors](https://github.com/rudberga/CI-MS3-calm/blob/master/static/img/color-palette.png?raw=true "Color Palette")
+![Colors]()
 
 ## Features
 
