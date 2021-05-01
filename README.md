@@ -141,20 +141,32 @@ The color theme is solely focused on black, white and grey. The reason for this 
 
 I have therefore focused on below palette
 
-![Colors]()
+![Color palette](https://github.com/rudberga/CI-MS4-nft/blob/master/static/img/color_palette.png?raw=true)
 
 ## Features
 
  
 ### Existing Features
 
+- **User account**: user can create account where they see order history, favourites and personal info
+- **Marketplace**: page where all the pieces are collected
+- **Search bar**: search bar where users are able to search for pieces they want to buy
+- **Filtering**: ability to filter on the marketplace by price, name or category
+- **Category**: ability to view pieces by category on the marketplace
+- **Order History**: users can see their order history on their profile
+- **Commenting**: users can comment on pieces on the marketplace
+- **Favourite list**: ability to add pieces to own favourite list which shows on your profile
+- **Secure payment**: pay securely with credit card through Stripe 
+- **Shopping cart**: where users can see what they added and adjust amount or remove
+- **Newsletter**: visitors can sign up to a newsletter 
 - **Social links**: in the footer you will find the icons for Inspiry's different social platforms
-- 
 
 ### Features Left to Implement
 
-- **Favorite list**: let every user add their favorite artists to their own profile
-- **Carousel**: with the most favorited artists
+- **My collection**: page under user profile where your own collection is displayed
+- **Rating system**: where users can rate each piece
+- **For sale**: users add their own pieces for sale
+- **Forum**: to open up the community part of the website
 
 ## Technologies Used 
 
@@ -174,15 +186,21 @@ I have therefore focused on below palette
     
 **Database**
 
-- [MongoDB](https://www.mongodb.com/)
-    - Document based data framework to store the applications data
+- [PostgreSQL](https://www.postgresql.org/)
+    - Database used in deployment
+
+- [SQLite3](https://www.sqlite.org/index.html)
+    - Database used in development
+
+- [AWS S3](https://aws.amazon.com/)
+    - Database used in deployment for static and media files
 
 **Frameworks**
 
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-    - Framework used with python to create the application. Imported via app.py
+- [Django](https://www.djangoproject.com/)
+    - Framework used with python to create the whole application
 
-- [Materialize](https://materializecss.com/)
+- [Bootstrap](https://getbootstrap.com/)
     - Framework used in order to improve the structure and design of the website. Imported via CDN
 
 - [jQuery](https://jquery.com/)
@@ -212,11 +230,14 @@ I have therefore focused on below palette
 - [Unsplash](https://unsplash.com/)
    - Used for images in the project. Imported locally through assets/img
 
-- [Canva](https://www.canva.com/)
-   - Used for making main icon. Imported locally through assets/img
+- [Stripe](https://stripe.com/)
+   - Used for payments in the application
 
-- [Jinja](http://jinja.palletsprojects.com/)
-   - Templating language used in this app
+- [Stripe](https://stripe.com/)
+   - Used for payments in the application
+
+- [Balsamiq](https://balsamiq.com/)
+   - Used for creating wireframes for the project
    
 
 ## Testing 
@@ -352,135 +373,24 @@ All of the testing and debugging above have left us with the result below on ach
 
 In order to deploy my website I used Heroku. The deployment was made from the master branch and I did it through below steps:
 
- 1. Firstly, we need to create a .txt file which will contain the project dependencies. Open the project in Gitpod, in the CLI run: 
-
- `pip3 freeze --local > requirements.txt`
-
- 2. In Gitpod, create a file named "Procfile". Inside this file you will have to enter: 
- 
- `web: python app.py`
- 
- This is for Heroku to know which language the application will be running on.
- 
- 3. After these two steps you need to commit to Github, this is very important, otherwise Heroku will not be able to deploy the project.
- 
- 4. Enter the Heroku website [https://www.heroku.com](https://www.heroku.com/), sign in with your log in credentials
- 
- 5. Click button "New" on the dashboard and select "Create new app".
-
- 6. Enter an unique name of your application -> select your region -> click "Create App".
- 
- 7. Back on the applications dashboard in Heroku, select "Settings".
- 
- 8. Copy the Heroku git URL under the "App Information".
- 
- 9. Go back to Gitpod and into the CLI run 
- 
-   `git remote add heroku "Paste your Heroku Git URL here"`
- 
- 10. Still in the CLI, run 
- 
-   `heroku ps:scale web=1`
-   
- 11. Enter the MongoDB website [https://www.mongodb.com](https://www.mongodb.com), sign in with your log in credentials
- 
- 12. When logged in and on your dashboard, select the cluster of your database and click "Connect".
- 
- 13. Click "Connect your application" among the options that appear.
- 
- 15. Choose Python as your driver and the version that you have.
- 
- 14. Copy the field under "Add your connection string into your application code".
-
- 15. Go back to the Heroku website and your applications dashboard -> Click "Settings" -> Click "Reveal Config Vars".
- 
- 16. Click "Add" and enter the information below:
-
-`IP` : `0.0.0.0`
-
-`PORT`: `5000`
-
-`MONGO_URI` : `PASTE THE CONNECTION STRING COPIED FROM MONGODB`
-
-- IMPORTANT! Inside the connection string, replace `<password>`with your MongoDB Database access password
-- IMPORTANT! Inside the connection string, replace `test` with the name of the database of your project
-
-`SECRET_KEY` : `secret key you have entered in env.py file`
-
-17. Click "More" in the top right corner -> Click "Restart all dynos" and confirm
-
-18. The app is now deployed and you can open it via the button "Open App"
-
 ### Running my project locally
 
-In order to run the project locally you should firstly enter my repository by the link https://github.com/rudberga/CI-MS3-calm.
- 
-1. Click the button **Code**
-2. Choose either **HTTPS**, **SSH** or **GitHub CLI**, then click the copy icon to the right of the link
-3. You will then open the terminal in your IDE
-4. Type `git clone` and then paste the URL you copied
-5. Press **Enter** and you will have created a local clone in your IDE
-
-You could also have it open directly in Gitpod if you are using it, see below:
-
-1. Open the repository https://github.com/rudberga/CI-MS3-calm
-2. Click the green **Gitpod** button 
-3. Gitpod will now open up a new workspace with the code from this project
-
-After these basic steps you will have to take further steps in order to make your IDE run the project. This is mainly instructions for Gitpod as that is the IDE that I was using. The steps might have to be adjusted depending on the IDE you use.
-
-1. To be able to run the application, you will have to create a .txt file with all the dependencies. To do this you can simply run below command in the CLI:
-
-`pip3 install -r requirements.txt`
-
-2. Create a "env.py" file, which you should add to your .gitignore as it will contain security information.
-
-3. In order to run this project locally you will have to create a matching DB in Mongo DB.
- 
-4. Create a new database called "calm" with the collections: 
-- "genres" 
-- "artists"
-- "users"
-- "newsletters"
-
-5. Choose Python as your driver and the version that you have.
- 
-6. Copy the field under "Add your connection string into your application code".
-
-7. Open your env.py in your IDE and enter this information in this order from top to bottom:
-
-`import os`
-
-`os.environ.setdefault("IP", "0.0.0.0")`
-
-`os.environ.setdefault("PORT", "5000")`
-
-`os.environ.setdefault("SECRET_KEY", "replace this with your own secret key")`
-
-`os.environ.setdefault("MONGO_URI","your mongo URI copied in step 6, replace < password > with your MongoDB Database access password. replace < test > with the name of the database of your project")`
-
-`os.environ.setdefault("MONGO_DBNAME", "calm")`
-
-8. Save the file and it should be ready to run locally.
 
 ## Credits
 
 ### Content
 
-- The text on all the pages of the website was written by myself
+- Text on FAQ-page was imported from [Morningbrew](https://www.morningbrew.com/daily/stories/2021/02/24/nft-frequently-asked-questions)
+- Rest of text on all the pages of the website was written by myself
 
 ### Media
-- Images on this website was imported from [Unsplash](https://unsplash.com/)
-- Logo for this website made by myself through the editor in [Canva](https://www.canva.com/)
+- Images and videos on this website was imported from [Unsplash](https://unsplash.com/) & [Pexels](https://www.pexels.com/)
+- GIF files were imported from [Giphy](https://giphy.com/)
 
 ### Code
 
 I have modified these code snippets in order for them to work in my project.
 - Hovering over social links and icons: [Ian Lunn](https://ianlunn.github.io/Hover/#effects)
-- Alert boxes: [pradeep1616](https://codepen.io/pradeep1616/pen/LxaRRB)
-- Partly covered backgrounds: [CSS Tricks](https://css-tricks.com/forums/topic/css-background-with-2-colors)
-                             & [G-Cyrillus](https://stackoverflow.com/questions/38398434/half-image-half-color-responsive-background)
-- Capitalize first letter in jinja template: [Shubham Jain](https://shubhamjain.co/til/capitalizing-first-letter-in-jinja)
 
 ### Disclaimer
 
