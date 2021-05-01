@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from comments.models import Comment
+from favourite.models import Favourite
 
 from .models import Category, Piece
 from .forms import ProductForm
@@ -62,9 +64,13 @@ def piece_detail(request, piece_id):
     """ A view to show an individual piece """
 
     piece = get_object_or_404(Piece, pk=piece_id)
+    comments = Comment.objects.filter(piece=piece_id)
+    fav_product = Favourite.objects.filter(piece=piece_id).last()
 
     context = {
         'piece': piece,
+        'comments': comments,
+        'fav_product': fav_product,
     }
 
     return render(request, 'pieces/piece_detail.html', context)
