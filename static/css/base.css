@@ -326,3 +326,15 @@ body {
     max-width: 85%;
     }
 }
+
+@media only screen and (max-width: 600px) {
+  .btn-explore {
+    font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-explore {
+    font-size: 3em;
+    }
+}
