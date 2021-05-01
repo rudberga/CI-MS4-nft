@@ -141,20 +141,32 @@ The color theme is solely focused on black, white and grey. The reason for this 
 
 I have therefore focused on below palette
 
-![Colors]()
+![Color palette](https://github.com/rudberga/CI-MS4-nft/blob/master/static/img/color_palette.png?raw=true)
 
 ## Features
 
  
 ### Existing Features
 
+- **User account**: user can create account where they see order history, favourites and personal info
+- **Marketplace**: page where all the pieces are collected
+- **Search bar**: search bar where users are able to search for pieces they want to buy
+- **Filtering**: ability to filter on the marketplace by price, name or category
+- **Category**: ability to view pieces by category on the marketplace
+- **Order History**: users can see their order history on their profile
+- **Commenting**: users can comment on pieces on the marketplace
+- **Favourite list**: ability to add pieces to own favourite list which shows on your profile
+- **Secure payment**: pay securely with credit card through Stripe 
+- **Shopping cart**: where users can see what they added and adjust amount or remove
+- **Newsletter**: visitors can sign up to a newsletter 
 - **Social links**: in the footer you will find the icons for Inspiry's different social platforms
-- 
 
 ### Features Left to Implement
 
-- **Favorite list**: let every user add their favorite artists to their own profile
-- **Carousel**: with the most favorited artists
+- **My collection**: page under user profile where your own collection is displayed
+- **Rating system**: where users can rate each piece
+- **For sale**: users add their own pieces for sale
+- **Forum**: to open up the community part of the website
 
 ## Technologies Used 
 
