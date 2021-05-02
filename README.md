@@ -1,8 +1,6 @@
 <h1 align="center">nft. (README AND PROJECT IS CURRENTLY UNDER DEVELOPMENT)</h1> 
 
-### MOCKUPS HERE
-
-![]()
+![Mockups](https://github.com/rudberga/CI-MS4-nft/blob/master/static/img/mockups.png?raw=true)
 
 <p align="center"><strong>Milestone 4 project - Full Stack Web Developer course - Code Institute</strong></p>
 
