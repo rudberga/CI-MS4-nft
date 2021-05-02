@@ -80,21 +80,20 @@
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                <td colspan="5" class="pt-5">
+                                    <h4 class="checkout-total"><strong>TOTAL: ${{ grand_total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'pieces' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <a href="{% url 'pieces' %}" class="keep-btn rounded-0 btn">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
+                                        <span>KEEP SHOPPING</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
+                                    <a href="{% url 'checkout' %}" class="checkout-btn rounded-0 btn">
+                                        <span>CHECKOUT</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
                                         </span>
@@ -105,11 +104,11 @@
                     </div>
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'pieces' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                    <a href="{% url 'pieces' %}" class="keep-btn rounded-0 btn">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase">Keep Shopping</span>
+                        <span>KEEP SHOPPING</span>
                     </a>
                 {% endif %}
             </div>

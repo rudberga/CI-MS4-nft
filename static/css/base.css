@@ -332,7 +332,8 @@ body {
 .back-btn:hover,
 .buy-btn:hover,
 .post-btn:hover,
-.checkout-btn:hover {
+.checkout-btn:hover,
+.keep-btn:hover {
         background: #000;
         color: #fff;
     }
@@ -342,6 +343,10 @@ body {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.keep-btn {
+    border: 2px solid #000;
 }
 
 /*--------------------------------- Toasts */
@@ -377,9 +382,16 @@ body {
     font-size: 1.5em;
 }
 
+/*--------------------------------- Checkout page */
+
 .checkout-btn {
     float: right;
     border: 2px solid #000;
+    font-size: 1.25em;
+}
+
+.checkout-total {
+    float: right;
 }
 
 /*--------------------------------- Media queries */
