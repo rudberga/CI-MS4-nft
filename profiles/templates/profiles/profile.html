@@ -3,6 +3,8 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 {% endblock %}
 
 {% block page_header %}
@@ -17,16 +19,15 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Account</h2>
+            <div class="col mb-4 mt-4">
+                <h2 class="logo-font mb-4 text-center">MY ACCOUNT &#128100;</h2>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
                 <table class="table table-sm table-borderless">
-                    <h3>Favourites list:</h3>
+                    <h4><i class="fas fa-heart heart-icon mb-4"></i> FAVOURITES LIST:</h4>
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -52,8 +53,8 @@
                     </table>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
-                <div class="order-history table-responsive">
+                <h4>&#128198; ORDER HISTORY:</h4>
+                <div class="order-history table-responsive mt-4">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
@@ -92,11 +93,11 @@
             </div>
             <div class="row">
             <div class="col-12 col-lg-6 account-info">
-                <p class="text-muted mt-4">Account Information</p>
+                <h4 class="mt-4">&#128394; ACCOUNT INFORMATION</h4>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <button class="btn rounded-0 profile-update-btn">UPDATE</button>
                 </form>
             </div>
         </div>
