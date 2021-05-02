@@ -8,8 +8,6 @@ Order Date: {{ order.date }}
 Order Total: ${{ order.order_total }}
 Grand Total: ${{ order.grand_total }}
 
-Your digital art piece will be delivered to the bitcoin wallet you entered in your profile or when you checked out.
-
 If you have any questions, feel free to contact us at {{ contact_email }}.
 
 Thank you for your order!
