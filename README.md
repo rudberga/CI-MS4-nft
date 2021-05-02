@@ -266,42 +266,46 @@ Fonts are consistent throughout the website, this was checked by simply controll
 
 ### Testing forms + Post & Get to/from DB
 
-As the website rely heavily on its forms for both user authentication as well as adding and editing artist cards, extensive testing on them was made. 
+As the website rely heavily on its forms for user authentication, payment process as well as adding and editing pieces, extensive testing on them was made. 
 
 #### Login 
 Tested by:
 - entering correct login info and logging in, got the data correctly from DB everytime
-- entering incorrect login info and trying to login
-- entering nothing and trying to login
+- entering incorrect login info and trying to login, form security stopped it from happen
+- entering nothing and trying to login, form security stopped it from happen
 
 #### Sign Up
 Tested by:
 - entering new user information and click sign up, posted the information correctly to DB everytime
 - entering already existing user information, got the already registered user information everytime
-- entering nothing and trying to sign up
+- entering nothing and trying to sign up, form security stopped it from happen
 
 
-#### Add Artist 
+#### Add/update piece 
 Tested by:
-- entering new artist information and click add, posted the information correctly to DB everytime
-- entering already existing artist information, function for get in this case is still under development
-- tested leaving fields empty to see that it did not work to add
+- entering new piece information and click add, posted the information correctly to DB everytime
+- entering new information on already existing piece, updated the information correctly to DB everytime
+- tested leaving fields empty to see that it did not work to add, form security stopped it from happen
 
-#### Edit Artist 
+#### Purchase piece 
 Tested by:
-- changing one field and click add, updated the data in DB everytime
-- changing fields and click cancel, did not change anything
+- entering all the information in address and contact form correctly and used Stripe test card which should work, purchase went through everytime as well as the order got posted to DB correctly, it also showed up on users account if user was logged in
+- entering something wrong in the form and try to process payment, form security stopped it from happen
+- tested leaving fields empty to see that it did not work to go through with order, form security stopped it from happen
 
 ### Bugs
 
 | Bug | Solution | Current status |
 | --- | -------- | -------------- |
-| Connection to MongoDB stopped working after changing geolocation from Japan to Sweden | Solved by creating a new cluster with the server based in Germany instead of Singapore | Solved |
-| When searching for an artist the error message "pymongo.errors.OperationFailure" shows up | Solved by creating a new search index via the CLI which was missed when creating a new cluster | Solved |
-| Logo does not show on profile page | Solved by adding a "url_for" in order to get the picture instead of a direct path | Solved |
-| Genre dropdown in modal for add artist does not generate any options | Solved by adding a get method to get genres from db in the "get_artist" function | Solved |
-| Login forms fields are difficult to mark and fill in | Solved by adding "pointer-events: none" directly to html | Solved |
-| Styling of alert box disappeared | Solved by moving the style class to the correct div | Solved |
+| Remove button do not remove item from cart | Solved by adding a slash after 'itemId' in JS code on cart.html | Solved |
+| Webhook error 401 when testing webhooks via Stripe | Solved by making the workspace and port public | Solved |
+| Webhook error 400 when testing webhooks via Stripe  | Solved by replacing the signing secret key and restarting workspace | Solved |
+| JS error '$.Post is not a function', did not work to go through with a purchase | Solved by removing slim JS from base template and replace it with min JS | Solved |
+| METADATA is not showing in console when payment goes through, it is only showing when payment fails | Solved by moving the print statement to the correct webhook which was success one and not failed one | Solved |
+| CHECKOUT process as logged out user causes error when processing payment | Solved by adding a “if user is authenticated” to saving profile information | Solved |
+| Navbar dropdown does not work | Solved by removing “bs” from data-toggle as it was a different version of Bootstrap | Solved |
+| Comments do not show up on website but get posted to db | Solved by correcting the view of piece_detail so it is possible to display data in front end | Solved |
+| Video on index page not showing in deployed website | Solved by linking to the video directly from the S3 bucket in AWS | Solved |
 
 
 ### Browser and screen size responsiveness testing
@@ -359,13 +363,10 @@ All of the testing and debugging above have left us with the result below on ach
 
 | User story | Result |
 | ---------- | ------ |
-| User friendly layout | PASS |
-| Register account, add, edit & delete artists | PASS |
-| Preview of artists before signing up | PASS |
-| Users posts gathered on profile page | PASS |
-| Newsletter | PASS |
-| Access to social links | PASS |
-| Information about each artist | PASS |
+| User stories as a new visitor | PASS |
+| User stories as a shopper | PASS |
+| User stories as a registered user | PASS |
+| User stories as an admin | PASS |
 
 ## Deployment
 
