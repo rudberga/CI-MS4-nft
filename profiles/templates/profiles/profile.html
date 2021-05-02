@@ -32,6 +32,34 @@
                     <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
             </div>
+
+            <div class="col-12 col-lg-6">
+                <table class="table table-sm table-borderless">
+                    <h3>Favourites list:</h3>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for fav in fav_list %}
+                                <tr>
+                                    <td><a href="{% url 'piece_detail' fav.piece.id %}">{{ fav.piece.name }}</a></td>
+                                    <td>${{ fav.piece.price }}</td>
+                                    <td>
+                                        <form method="POST" action="{% url 'add_fav' %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="piece_name" value="{{ fav.piece.id }}">
+                                            <input type="submit" class="btn btn-success" value="Remove">
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Order History</p>
                 <div class="order-history table-responsive">
@@ -69,33 +97,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <table class="table table-sm table-borderless">
-                    <h1>Favourites added by you:</h1>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for fav in fav_list %}
-                                <tr>
-                                    <td><a href="{% url 'piece_detail' fav.piece.id %}">{{ fav.piece.name }}</a></td>
-                                    <td>${{ fav.piece.price }}</td>
-                                    <td>
-                                        <form method="POST" action="{% url 'add_fav' %}">
-                                            {% csrf_token %}
-                                            <input type="hidden" name="piece_name" value="{{ fav.piece.id }}">
-                                            <input type="submit" class="btn btn-success" value="Remove">
-                                        </form>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
             </div>
         </div>
     </div>
