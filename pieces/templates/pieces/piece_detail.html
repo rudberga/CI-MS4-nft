@@ -14,7 +14,7 @@
 {% block content %}
 
     <div class="row">
-        <div class="col-md-5 col-sm-10 piece-detail-img">
+        <div class="col-md-5 col-sm-12 piece-detail-img">
     {% if piece.media %}
         <a href="{{ piece.media.url }}" target="_blank">
             <img class="card-img-top img-fluid h-75" src="{{ piece.media.url }}" alt="{{ piece.name }}">
@@ -31,7 +31,7 @@
                 <a class="text-danger" href="{% url 'delete_piece' piece.id %}">Delete</a>
             </small>
         {% endif %}
-        <div class="col-md-5 offset-1 col-sm-10 piece-detail-text">
+        <div class="col-md-5 offset-md-1 col-sm-10 piece-detail-text">
             <h5><strong>{{ piece.name }}</strong></h5>
                 <p><i>by</i> {{ piece.artist }}</p>
                 {% if request.user.is_authenticated %}

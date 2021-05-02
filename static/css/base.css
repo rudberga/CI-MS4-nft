@@ -175,10 +175,12 @@ body {
 
 .piece-detail-img {
     margin: 30px;
+    padding: 0;
 }
 
 .piece-detail-text {
     margin-top: 50px;
+    padding: 0;
 }
 
 .piece-detail-text .btn {
@@ -427,5 +429,18 @@ body {
 @media only screen and (max-width: 600px) {
   .card-img-top {
     height: 75vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .piece-detail-img {
+    margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .piece-detail-text {
+    margin-top: 0px;
+    text-align: center;
     }
 }
