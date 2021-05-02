@@ -266,31 +266,32 @@ Fonts are consistent throughout the website, this was checked by simply controll
 
 ### Testing forms + Post & Get to/from DB
 
-As the website rely heavily on its forms for both user authentication as well as adding and editing artist cards, extensive testing on them was made. 
+As the website rely heavily on its forms for user authentication, payment process as well as adding and editing pieces, extensive testing on them was made. 
 
 #### Login 
 Tested by:
 - entering correct login info and logging in, got the data correctly from DB everytime
-- entering incorrect login info and trying to login
-- entering nothing and trying to login
+- entering incorrect login info and trying to login, form security stopped it from happen
+- entering nothing and trying to login, form security stopped it from happen
 
 #### Sign Up
 Tested by:
 - entering new user information and click sign up, posted the information correctly to DB everytime
 - entering already existing user information, got the already registered user information everytime
-- entering nothing and trying to sign up
+- entering nothing and trying to sign up, form security stopped it from happen
 
 
-#### Add Artist 
+#### Add/update piece 
 Tested by:
-- entering new artist information and click add, posted the information correctly to DB everytime
-- entering already existing artist information, function for get in this case is still under development
-- tested leaving fields empty to see that it did not work to add
+- entering new piece information and click add, posted the information correctly to DB everytime
+- entering new information on already existing piece, updated the information correctly to DB everytime
+- tested leaving fields empty to see that it did not work to add, form security stopped it from happen
 
-#### Edit Artist 
+#### Purchase piece 
 Tested by:
-- changing one field and click add, updated the data in DB everytime
-- changing fields and click cancel, did not change anything
+- entering all the information in address and contact form correctly and used Stripe test card which should work, purchase went through everytime as well as the order got posted to DB correctly, it also showed up on users account if user was logged in
+- entering something wrong in the form and try to process payment, form security stopped it from happen
+- tested leaving fields empty to see that it did not work to go through with order, form security stopped it from happen
 
 ### Bugs
 
