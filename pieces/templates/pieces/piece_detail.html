@@ -79,15 +79,16 @@
                                 </div>
                             </div>
 
-
                             <div class="col-12">
-                                <a href="{% url 'pieces' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <input type="submit" class="btn rounded-0 mt-5 buy-btn" value="BUY">
+                            </div>
+                            <div class="col-12">
+                                <a href="{% url 'pieces' %}" class="btn rounded-0 mt-1 back-btn">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
@@ -110,7 +111,7 @@
                             <label class="form-label" for="comment"></label>
                             </div>
                             <input type="hidden" name="piece_name" value="{{ piece.id }}">
-                            <input type="submit" class="btn btn-success" value="Post">
+                            <input type="submit" class="btn post-btn rounded-0" value="POST">
                         </form>
                     {% endif %}
                 </div>
