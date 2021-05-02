@@ -4,6 +4,12 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
 
 {% block page_header %}
@@ -19,8 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Checkout</h2>
+                <h2 class="logo-font mb-4 mt-4 text-center">CHECKOUT</h2>
                 <hr>
             </div>
         </div>
@@ -73,12 +78,17 @@
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                        <legend class="fieldset-label small text-black px-2 w-auto">CONTACT DETAILS</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                        <legend class="fieldset-label small text-black px-2 w-auto">ADDRESS 
+                            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Why do we need your address? 
+                            We need it in order to send you the nft. certificate of collector. This is only an extra service we provide, although the true ownership is proven via the blockchain">
+                            <i class="fas fa-question-circle"></i>    
+                            </button>
+                        </legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
