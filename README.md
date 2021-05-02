@@ -363,13 +363,10 @@ All of the testing and debugging above have left us with the result below on ach
 
 | User story | Result |
 | ---------- | ------ |
-| User friendly layout | PASS |
-| Register account, add, edit & delete artists | PASS |
-| Preview of artists before signing up | PASS |
-| Users posts gathered on profile page | PASS |
-| Newsletter | PASS |
-| Access to social links | PASS |
-| Information about each artist | PASS |
+| User stories as a new visitor | PASS |
+| User stories as a shopper | PASS |
+| User stories as a registered user | PASS |
+| User stories as an admin | PASS |
 
 ## Deployment
 
