@@ -349,6 +349,10 @@ body {
     border: 2px solid #000;
 }
 
+.update-icon {
+    float: right;
+}
+
 /*--------------------------------- Toasts */
 
 .message-container {
