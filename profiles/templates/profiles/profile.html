@@ -43,7 +43,7 @@
                                         <form method="POST" action="{% url 'add_fav' %}">
                                             {% csrf_token %}
                                             <input type="hidden" name="piece_name" value="{{ fav.piece.id }}">
-                                            <input type="submit" class="btn btn-success" value="Remove">
+                                            <input type="submit" class="btn fav-del-btn" value="&times;">
                                         </form>
                                     </td>
                                 </tr>
