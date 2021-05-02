@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col mb-4 mt-4">
-                <h2 class="logo-font mb-4 text-center">MY ACCOUNT &#128100;</h2>
+                <h2 class="logo-font mb-4 text-center">MY ACCOUNT</h2>
                 <hr>
             </div>
         </div>
@@ -93,7 +93,7 @@
             </div>
             <div class="row">
             <div class="col-12 col-lg-6 account-info">
-                <h4 class="mt-4">&#128394; ACCOUNT INFORMATION</h4>
+                <h4 class="mt-4 mb-4">&#128394; ACCOUNT INFORMATION</h4>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
