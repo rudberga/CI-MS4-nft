@@ -25,12 +25,6 @@
         </a>
     {% endif %}
         </div>
-        {% if request.user.is_superuser %}
-            <small class="ml-3">
-                <a href="{% url 'edit_piece' piece.id %}">Edit</a> | 
-                <a class="text-danger" href="{% url 'delete_piece' piece.id %}">Delete</a>
-            </small>
-        {% endif %}
         <div class="col-md-5 offset-md-1 col-sm-10 piece-detail-text">
             <h5><strong>{{ piece.name }}</strong></h5>
                 <p><i>by</i> {{ piece.artist }}</p>
@@ -93,6 +87,12 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
+                    {% if request.user.is_superuser %}
+            <small class="ml-3">
+                <a href="{% url 'edit_piece' piece.id %}">Edit</a> | 
+                <a class="text-danger" href="{% url 'delete_piece' piece.id %}">Delete</a>
+            </small>
+        {% endif %}
                     <div class="comment-field">
                     {% if request.user.is_authenticated %}
                     <h3>User comments</h3>
