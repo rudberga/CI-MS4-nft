@@ -31,6 +31,11 @@
     margin-top: 20px;
 }
 
+.profile-update-btn:hover {
+        background: #000;
+        color: #fff;
+    }
+
 .heart-icon {
     background-color: transparent;
     border: none;
