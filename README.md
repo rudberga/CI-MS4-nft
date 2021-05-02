@@ -1,4 +1,4 @@
-<h1 align="center">nft. (README AND PROJECT IS CURRENTLY UNDER DEVELOPMENT)</h1> 
+<h1 align="center">nft.</h1> 
 
 ![Mockups](https://github.com/rudberga/CI-MS4-nft/blob/master/static/img/mockups.png?raw=true)
 
