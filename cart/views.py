@@ -59,10 +59,10 @@ def adjust_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
     """Remove the item from the shopping bag"""
-
+    piece = get_object_or_404(Piece, pk=item_id)
     try:
         cart = request.session.get('cart', {})
-        piece = get_object_or_404(Piece, pk=item_id)
+
         cart.pop(item_id)
         messages.success(request, f'Removed {piece.name} from cart')
 
