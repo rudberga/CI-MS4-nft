@@ -385,6 +385,7 @@ In order to deploy my website I used Heroku. The deployment was made from the ma
 ### Media
 - Images and videos on this website was imported from [Unsplash](https://unsplash.com/) & [Pexels](https://www.pexels.com/)
 - GIF files were imported from [Giphy](https://giphy.com/)
+- Artist credits are found [here](static/docs/credit.md).
 
 ### Code
 
