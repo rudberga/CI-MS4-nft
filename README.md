@@ -301,8 +301,7 @@ Tested by:
 | Webhook error 400 when testing webhooks via Stripe  | Solved by replacing the signing secret key and restarting workspace | Solved |
 | JS error '$.Post is not a function', did not work to go through with a purchase | Solved by removing slim JS from base template and replace it with min JS | Solved |
 | METADATA is not showing in console when payment goes through, it is only showing when payment fails | Solved by moving the print statement to the correct webhook which was success one and not failed one | Solved |
-| CHECKOUT process as logged out user causes error when processing payment | Solved by adding a “if user is authenticated” to saving profile information
- | Solved |
+| CHECKOUT process as logged out user causes error when processing payment | Solved by adding a “if user is authenticated” to saving profile information | Solved |
 | Navbar dropdown does not work | Solved by removing “bs” from data-toggle as it was a different version of Bootstrap | Solved |
 | Comments do not show up on website but get posted to db | Solved by correcting the view of piece_detail so it is possible to display data in front end | Solved |
 | Video on index page not showing in deployed website | Solved by linking to the video directly from the S3 bucket in AWS | Solved |
