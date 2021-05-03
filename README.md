@@ -303,8 +303,6 @@ I have done a lot of testing throughout the project and below you will find it i
 | 1. About page | Verify that the about page is working fine and displays text correctly | By entering the about page | PASS |
 | Social links | ------ | -------- | ------ |
 | 1. Links | Verify that the social links opens up a new tab to the correct social media platform | By clicking the different icons in the footer | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
 
 
 ### Tests done in order to secure structural integrity
@@ -317,7 +315,7 @@ This includes the modals for:
 
 - Log in
 - Sign up
-- Add artist
+- Log out
 
 #### Fonts
 
@@ -336,10 +334,9 @@ Tested by:
 
 #### Forgot password 
 Tested by:
-- entering correct login info and logging in, got the data correctly from DB everytime
-- entering incorrect login info and trying to login, form security stopped it from happen
-- entering required fields in wrong format (e.g. password length), form security stopped it from happen
-- entering nothing and trying to login, form security stopped it from happen
+- entering correct e-mail info and press reset my password, e-mail sent to user with recovery link
+- entering incorrect e-mail info and press reset my password, form security stopped it from happen
+- entering e-mail with incorrect format and press reset my password, form security stopped it from happen
 
 #### Sign Up
 Tested by:
