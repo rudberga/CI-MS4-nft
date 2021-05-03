@@ -394,8 +394,6 @@ Pushed my HTML code through the validator and got following messages which I cor
 | Message | Solution |
 | ------- | -------- |
 | Attribute a not allowed on element a at this point | Solved by removing one "a" in the tag as it accidentally was two of them |
-| Character reference was not terminated by a semicolon | Solved by adding ";" to the end of the emojis |
-| An img element must have an alt attribute, except under certain conditions. | Solved by adding alt that was missing |
 
 **IMPORTANT!** Because I am using the jinja templating language in this app, there is bound to show a lot of warnings and errors connected to that. These warnings and errors have been checked and controlled and are deemed to be safe to disregard as they are not true errors for the application.
 
@@ -413,7 +411,7 @@ Pushed my JavaScript code through JSHint where no major issues showed up.
 
 | Message | Solution |
 | ------- | -------- |
-| No relevant warnings and no errors showing. | - |
+| Missing semicolon | Added semicolon where needed |
 
 The report shows that there are several undefined variables '$', this is caused by using jQuery and therefore we can disregard them.
 
@@ -423,7 +421,7 @@ Pushed my Python code through PEP8 where only a few minor issues showed up, such
 
 | Message | Solution |
 | ------- | -------- |
-| No relevant warnings and no errors showing. | - |
+| Line too long | Found a way to split the line |
 
 ### User stories result
 
