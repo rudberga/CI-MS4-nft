@@ -275,15 +275,28 @@ I have done a lot of testing throughout the project and below you will find it i
 | Sign up | ------ | -------- | ------ |
 | 1. Sign up buttons | Verify that clicking cancels/reset button after entering all the required fields, cancels the submit request, and reset all the fields | Clicking on back to login button | PASS |
 | 2. Sign up link | Verify that sign up link in navbar leads to sign up form | By clicking the sign up link | PASS |
-| Log in | ------ | -------- | ------ |
+| Sign in | ------ | -------- | ------ |
+| 1. Sign in button | Verify that button initiates sign in after filling out form correctly | By filling in correct info and click log in | PASS |
+| 2. Sign in link | Verify that link to forgot password takes user to forgot password page | By clicking the link in the sign in form | PASS |
+| Log out | ------ | -------- | ------ |
 | Logged in user functionalities | ------ | -------- | ------ |
 | 1. Favourite list | Verify that users can add products to the favourite list which appear on profile | By pressing heart icon on piece and checking account page | PASS |
 | 2. Favourite list | Verify that users can remove products from the favourite list both on the piece itself | By pressing broken heart icon, but also remove directly from account page | PASS |
-| 3. Comments | Verify that you can  | -------- | PASS |
+| 4. Comments | Verify that a logged in user can see and create own comments on piece detail page | By logging in and trying to submit a comment | PASS |
+| Logged out user functionalities | ------ | -------- | ------ |
+| 1. Comments | Verify that a user who is not logged in cannot create comments | By checking a piece detail page without being logged in | PASS |
+| 2. Favourite list | Verify that a user who is not logged in cannot add favourites | By checking a piece detail page without being logged in | PASS |
+| Profile | ------ | -------- | ------ |
 | ---- | ------ | -------- | PASS |
 | ---- | ------ | -------- | PASS |
 | ---- | ------ | -------- | PASS |
 | ---- | ------ | -------- | PASS |
+| FAQ | ------ | -------- | PASS |
+| 1. FAQ page | Verify that the about page is working fine and displays text correctly | By entering the FAQ page | PASS |
+| About | ------ | -------- | ------ |
+| 1. About page | Verify that the about page is working fine and displays text correctly | By entering the about page | PASS |
+| Social links | ------ | -------- | ------ |
+| 1. Links | Verify that the social links opens up a new tab to the correct social media platform | By clicking the different icons in the footer | PASS |
 | ---- | ------ | -------- | PASS |
 | ---- | ------ | -------- | PASS |
 
@@ -309,6 +322,13 @@ Fonts are consistent throughout the website, this was checked by simply controll
 As the website rely heavily on its forms for user authentication, payment process as well as adding and editing pieces, extensive testing on them was made. 
 
 #### Login 
+Tested by:
+- entering correct login info and logging in, got the data correctly from DB everytime
+- entering incorrect login info and trying to login, form security stopped it from happen
+- entering required fields in wrong format (e.g. password length), form security stopped it from happen
+- entering nothing and trying to login, form security stopped it from happen
+
+#### Forgot password 
 Tested by:
 - entering correct login info and logging in, got the data correctly from DB everytime
 - entering incorrect login info and trying to login, form security stopped it from happen
