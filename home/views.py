@@ -1,11 +1,10 @@
-from allauth.account.forms import LoginForm, SignupForm
+from allauth.account.forms import LoginForm
 from django.shortcuts import render
 
 
 def index(request):
     context = {
         'login_form': LoginForm(),
-        'signup_form': SignupForm(),
     }
     """ View to return index page """
 

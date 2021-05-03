@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from favourite.models import Favourite
 from .models import UserProfile
 from .forms import UserProfileForm
+from allauth.account.forms import LoginForm
 
 from checkout.models import Order
 
@@ -30,7 +31,8 @@ def profile(request):
         'form': form,
         'orders': orders,
         'fav_list': fav_list,
-        'on_profile_page': True
+        'on_profile_page': True,
+        'login_form': LoginForm(),
     }
 
     return render(request, template, context)
