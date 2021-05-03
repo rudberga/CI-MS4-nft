@@ -272,6 +272,12 @@ body {
     width: 27%;
 }
 
+/*--------------------------------- Modal */
+
+.modal-login {
+    margin: 30px;
+}
+
 /*--------------------------------- Shopping Cart */
 
 .update-link,

@@ -182,7 +182,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Copyrights -->
         <div class="bg-light py-4 sticky">
             <div class="container text-center">
@@ -190,7 +189,7 @@
             </div>
         </div>
     </footer>
-
+    <!-- Toasts -->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -208,19 +207,21 @@
         {% endfor %}
     </div>
     {% endif %}
-
+    <!-- Modal log in -->
     <div class="modal fade col-lg-12" id="sigin_id">
             <div class="modal-dialog">
                 <div class="modal-content">
+                    <h2 class="text-center mt-4">Welcome! &#128075;</h2>
+                    <h4>Sign in below &#128071;</h4>
                 <div>
-                    <form class="login" action="{% url 'account_login' %}?next={% url 'home' %}" method="POST">
+                    <form class="login modal-login" action="{% url 'account_login' %}?next={% url 'home' %}" method="POST">
                       {% csrf_token %}
                       {{login_form|crispy }}
                       {% if redirect_field_value %}
                       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                       {% endif %}
-                      <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
-                      <button class="primaryAction" type="submit">Sign In</button>
+                      <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">HOME</a>
+                      <button class="primaryAction keep-btn" type="submit">SIGN IN</button>
                       <p class="mt-2">
                         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password</a>
                       </p>
@@ -238,7 +239,6 @@
               $('#for_sign').click(function (){
                    $('#sigin_id').modal('show');
                 });
-
             });
         </script>
     {% endblock %}
