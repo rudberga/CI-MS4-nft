@@ -268,6 +268,10 @@ body {
     float: right;
 }
 
+.quantity-checkout {
+    width: 27%;
+}
+
 /*--------------------------------- Shopping Cart */
 
 .update-link,
@@ -446,5 +450,11 @@ body {
     .piece-detail-text {
         margin-top: 0px;
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .quantity-checkout {
+        width: 40%;
     }
 }
