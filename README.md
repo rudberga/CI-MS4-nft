@@ -258,18 +258,24 @@ I have done a lot of testing throughout the project and below you will find it i
 | 3. "Sort by" button A to Z | Verify that Sort by filtering functionality correctly filters products based on the name A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
 | 4. "Sort by" button category | Verify that Sort by filtering functionality correctly filters products based on the category A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
 | 5. Number of items  | Verify that piece count remains intact irrespective of sorting option applied | Applying sort by filter on the marketplace page and counting the items | PASS |
+| Piece purchase flow | ------ | -------- | ------ |
+| 1. Add to cart | Verify that the user can add to cart with one or more pieces | By adding the pieces to the cart | PASS |
+| 2. Add to cart | Verify that the user cannot add more than the max amount of the piece, should cause an error | Adding 100 items of a piece | PASS |
+| 3. Cart toast | Verify that the toast that pops up when piece added to cart is showing correct info | By adding different pieces with different amounts to the cart | PASS |
+| 4. Cart toast | Verify that the checkout button inside the toast leads to the shopping cart page | By clicking the checkout button after adding pieces | PASS |
+| 5. Shopping cart | Verify that all pieces that were added from marketplace stays in shopping cart when pressing checkout | By clicking the checkout button after adding pieces and controlling the shopping cart page | PASS |
+| 6. Shopping cart | Verify that the user can delete a piece completely or update quantity by pressing the two buttons | Updated quantity and pressed update, then pressed delete button | PASS |
+| 7. Shopping cart | Verify that the correct total amount always appear and updates if you update quantity | By adding different amounts to shopping cart and changing quantity within shopping cart | PASS |
+| 8. Shopping cart | Verify that the checkout button leads to checkout page with all correct pieces still in the cart | By pressing checkout button inside shopping cart and check pieces | PASS |
+| 9. Checkout | Verify that the order summary shows correct pieces and correct grand total | By comparing pieces in shopping cart when proceeding over to checkout with order summary and its total amount | PASS |
+| 10. Checkout | Verify that payment goes through correctly and order confirmation page generates when using Stripes test card | By adding all info correctly in form and adding Stripe test card number then press complete order | PASS |
+| 11. Checkout | Verify that order goes through if payment is accepted, even if website do not load correctly | By removing the form function in JS code to and check admin if the order is stored in DB and order email is sent | PASS |
 | ---- | ------ | -------- | PASS |
 | ---- | ------ | -------- | PASS |
+| Logged in user functionalities | ------ | -------- | ------ |
+| 1. Favourite | Verify that users can add products to the favourite list which appear on profile | By pressing heart icon on piece and checking account page | PASS |
 | ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
+
 
 ### Tests done in order to secure structural integrity
 
