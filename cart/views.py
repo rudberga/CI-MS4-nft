@@ -2,14 +2,19 @@ from django.shortcuts import (
     render, redirect, reverse, HttpResponse, get_object_or_404
 )
 from django.contrib import messages
+from allauth.account.forms import LoginForm
 
 from pieces.models import Piece
 
 
 def view_cart(request):
+    """ Context for login modal """
+    context = {
+        'login_form': LoginForm(),
+    }
     """ View to render the cart page """
 
-    return render(request, 'cart/cart.html')
+    return render(request, 'cart/cart.html', context)
 
 
 def add_to_cart(request, item_id):

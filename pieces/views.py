@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from comments.models import Comment
 from favourite.models import Favourite
+from allauth.account.forms import LoginForm
 
 from .models import Category, Piece
 from .forms import ProductForm
@@ -55,6 +56,7 @@ def all_pieces(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'login_form': LoginForm(),
     }
 
     return render(request, 'pieces/pieces.html', context)
@@ -71,6 +73,7 @@ def piece_detail(request, piece_id):
         'piece': piece,
         'comments': comments,
         'fav_product': fav_product,
+        'login_form': LoginForm(),
     }
 
     return render(request, 'pieces/piece_detail.html', context)

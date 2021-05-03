@@ -12,6 +12,7 @@ from pieces.models import Piece
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from cart.contexts import cart_contents
+from allauth.account.forms import LoginForm
 
 import stripe
 import json
@@ -138,6 +139,7 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'login_form': LoginForm(),
     }
 
     return render(request, template, context)
