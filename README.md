@@ -293,6 +293,12 @@ Tested by:
 - entering something wrong in the form and try to process payment, form security stopped it from happen
 - tested leaving fields empty to see that it did not work to go through with order, form security stopped it from happen
 
+#### Update account info 
+Tested by:
+- entering account information in the form and click update, posted the information correctly to DB everytime
+- entering new information on checkout and tick save box to see if it updates correctly on account page, updated the information correctly to DB and account everytime
+- tested leaving fields empty to see that it did not work to update, form security stopped it from happen
+
 ### Bugs
 
 | Bug | Solution | Current status |
