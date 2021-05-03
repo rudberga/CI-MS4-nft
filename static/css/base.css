@@ -109,30 +109,30 @@ body {
 /*CREDIT for responsive button over video: https://stackoverflow.com/questions/35647044/boostrap-how-to-stick-a-button-over-an-image-when-re-sizing/35676474 */
 
 .video-wrapper {
-  position: relative;
+    position: relative;
 }
 
 .video-responsive {
     margin-top: 20px;
-  width: 85%;
-  height: auto;
+    width: 85%;
+    height: auto;
 }
 
 .video-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
 }
 
 .video-overlay:before {
-  content: ' ';
-  display: block;
-  /* adjust 'height' to position overlay content vertically */
-  height: 30%;
+    content: ' ';
+    display: block;
+    /* adjust 'height' to position overlay content vertically */
+    height: 30%;
 }
 
 /*--------------------------------- Pieces page */
@@ -183,7 +183,7 @@ body {
     padding: 0;
 }
 
-.piece-detail-text .btn {
+.piece-detail-text .btn {
     margin-top: 50px;
 }
 
@@ -232,6 +232,7 @@ body {
 .about-text p {
     margin-top: 25px;
 }
+
 /*--------------------------------- FAQ */
 
 .faq-title {
@@ -255,6 +256,33 @@ body {
     margin-bottom: 50px;
 }
 
+/*--------------------------------- Checkout page */
+
+.checkout-btn {
+    float: right;
+    border: 2px solid #000;
+    font-size: 1em;
+}
+
+.checkout-total {
+    float: right;
+}
+
+/*--------------------------------- Shopping Cart */
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.keep-btn {
+    border: 2px solid #000;
+}
+
+.update-icon {
+    float: right;
+}
+
 /*--------------------------------- Footer */
 
 .footer-top {
@@ -264,7 +292,7 @@ body {
 }
 
 #button-addon1 {
-  color: rgba(161, 161, 161, 0.911);
+    color: rgba(161, 161, 161, 0.911);
 }
 
 .social-icons {
@@ -278,16 +306,16 @@ body {
 }
 
 .form-control::placeholder {
-  font-size: 0.95rem;
-  color: #aaa;
-  font-style: italic;
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
 }
 
 .form-control.shadow-0:focus {
-  box-shadow: none;
+    box-shadow: none;
 }
 
-.footer-links{
+.footer-links {
     color: #707070;
     text-decoration: none;
 }
@@ -336,23 +364,8 @@ body {
 .post-btn:hover,
 .checkout-btn:hover,
 .keep-btn:hover {
-        background: #000;
-        color: #fff;
-    }
-
-/*--------------------------------- Shopping Cart */
-
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
-.keep-btn {
-    border: 2px solid #000;
-}
-
-.update-icon {
-    float: right;
+    background: #000;
+    color: #fff;
 }
 
 /*--------------------------------- Toasts */
@@ -388,59 +401,47 @@ body {
     font-size: 1.5em;
 }
 
-/*--------------------------------- Checkout page */
-
-.checkout-btn {
-    float: right;
-    border: 2px solid #000;
-    font-size: 1em;
-}
-
-.checkout-total {
-    float: right;
-}
-
 /*--------------------------------- Media queries */
 
 @media only screen and (max-width: 600px) {
-  .newsletter-input {
-    max-width: 85%;
+    .newsletter-input {
+        max-width: 85%;
     }
 }
 
 @media only screen and (max-width: 600px) {
-  .btn-explore {
-    font-size: 2em;
+    .btn-explore {
+        font-size: 2em;
     }
 }
 
 @media only screen and (max-width: 768px) {
-  .btn-explore {
-    font-size: 3em;
+    .btn-explore {
+        font-size: 3em;
     }
 }
 
 @media only screen and (max-width: 768px) {
-  .card-img-top {
-    height: 50vw;
+    .card-img-top {
+        height: 50vw;
     }
 }
 
 @media only screen and (max-width: 600px) {
-  .card-img-top {
-    height: 75vw;
+    .card-img-top {
+        height: 75vw;
     }
 }
 
 @media only screen and (max-width: 600px) {
-  .piece-detail-img {
-    margin: 0px;
+    .piece-detail-img {
+        margin: 0px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-  .piece-detail-text {
-    margin-top: 0px;
-    text-align: center;
+    .piece-detail-text {
+        margin-top: 0px;
+        text-align: center;
     }
 }
