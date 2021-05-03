@@ -243,6 +243,7 @@ I have therefore focused on below palette
 I have done a lot of testing throughout the project and below you will find it in a more structured manner. I have made sure that the user stories are tested and works well, also focused on responsiveness where I have used resources online as well as the physical devices I had access to. Whenever a new functionality of the site was implemented, I tested it. At the end of the development journey, I had a big testing day where I went through the sites full functionality again.
 
 ### Tests done in order to secure UI components
+(Forms are not incluced in the table as they have a separate section below)
 
 | Test | Objective/Expected | Method | Result |
 | ---- | ------ | -------- | ------ |
@@ -270,10 +271,20 @@ I have done a lot of testing throughout the project and below you will find it i
 | 9. Checkout | Verify that the order summary shows correct pieces and correct grand total | By comparing pieces in shopping cart when proceeding over to checkout with order summary and its total amount | PASS |
 | 10. Checkout | Verify that payment goes through correctly and order confirmation page generates when using Stripes test card | By adding all info correctly in form and adding Stripe test card number then press complete order | PASS |
 | 11. Checkout | Verify that order goes through if payment is accepted, even if website do not load correctly | By removing the form function in JS code to and check admin if the order is stored in DB and order email is sent | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
+| 12. Checkout | Verify that the order confirmation is sent and that the information on order confirmation page is correct | By making multiple purchases with different e-mails and pieces, also as logged in and logget out | PASS |
+| Sign up | ------ | -------- | ------ |
+| 1. Sign up buttons | Verify that clicking cancels/reset button after entering all the required fields, cancels the submit request, and reset all the fields | Clicking on back to login button | PASS |
+| 2. Sign up link | Verify that sign up link in navbar leads to sign up form | By clicking the sign up link | PASS |
+| Log in | ------ | -------- | ------ |
 | Logged in user functionalities | ------ | -------- | ------ |
-| 1. Favourite | Verify that users can add products to the favourite list which appear on profile | By pressing heart icon on piece and checking account page | PASS |
+| 1. Favourite list | Verify that users can add products to the favourite list which appear on profile | By pressing heart icon on piece and checking account page | PASS |
+| 2. Favourite list | Verify that users can remove products from the favourite list both on the piece itself | By pressing broken heart icon, but also remove directly from account page | PASS |
+| 3. Comments | Verify that you can  | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
 | ---- | ------ | -------- | PASS |
 
 
@@ -301,11 +312,14 @@ As the website rely heavily on its forms for user authentication, payment proces
 Tested by:
 - entering correct login info and logging in, got the data correctly from DB everytime
 - entering incorrect login info and trying to login, form security stopped it from happen
+- entering required fields in wrong format (e.g. password length), form security stopped it from happen
 - entering nothing and trying to login, form security stopped it from happen
 
 #### Sign Up
 Tested by:
 - entering new user information and click sign up, posted the information correctly to DB everytime
+- entering parts of form and click sign up, form security stopped it from happen
+- entering required fields in wrong format (e.g. e-mail), form security stopped it from happen
 - entering already existing user information, got the already registered user information everytime
 - entering nothing and trying to sign up, form security stopped it from happen
 
