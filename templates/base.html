@@ -212,7 +212,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <h2 class="text-center mt-4">Welcome! &#128075;</h2>
-                    <h4>Sign in below &#128071;</h4>
+                    <p class="text-center">Sign in below &#128071;</p>
                 <div>
                     <form class="login modal-login" action="{% url 'account_login' %}?next={% url 'home' %}" method="POST">
                       {% csrf_token %}

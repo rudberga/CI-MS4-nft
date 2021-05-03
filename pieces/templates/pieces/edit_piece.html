@@ -26,9 +26,9 @@
                 <form method="POST" action="{% url 'edit_piece' piece.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
-                    <div class="text-right">
+                    <div class="text-right mt-4">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'pieces' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update Piece</button>
+                        <button class="btn keep-btn rounded-0" type="submit">Update Piece</button>
                     </div>
                 </form>
             </div>            
