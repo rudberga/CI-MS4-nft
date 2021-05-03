@@ -83,7 +83,7 @@
                                             <i class="fas fa-user hvr-fade"></i>
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="{% url 'account_login' %}">SIGN IN</a></li>
+                                            <li id="for_sign" class="dropdown-item">SIGN IN</li>
                                             <li><a class="dropdown-item" href="{% url 'account_signup' %}">REGISTER</a></li>
                                         </ul>
                                     </div>
@@ -209,9 +209,37 @@
     </div>
     {% endif %}
 
+    <div class="modal fade col-lg-12" id="sigin_id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div>
+                    <form class="login" action="{% url 'account_login' %}?next={% url 'home' %}" method="POST">
+                      {% csrf_token %}
+                      {{login_form|crispy }}
+                      {% if redirect_field_value %}
+                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                      {% endif %}
+                      <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
+                      <button class="primaryAction" type="submit">Sign In</button>
+                      <p class="mt-2">
+                        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password</a>
+                      </p>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+
     {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');
+
+            $(document).ready(function(){
+              $('#for_sign').click(function (){
+                   $('#sigin_id').modal('show');
+                });
+
+            });
         </script>
     {% endblock %}
 </body>
