@@ -244,9 +244,32 @@ I have done a lot of testing throughout the project and below you will find it i
 
 ### Tests done in order to secure UI components
 
-| Test | Method | Expected | Result |
+| Test | Objective/Expected | Method | Result |
 | ---- | ------ | -------- | ------ |
-| Log In | ------ | -------- | ------ |
+| General Testing | ------ | -------- | ------ |
+| 1. Navigation | Verify that the user is able to navigate through all the navbar links | Opened up website and tested to click on the different navbar links | PASS |
+| 2. Navigation | Verify that the user is able to navigate through all the products across the different categories | Opened up marketplace and tested to click on the different categories | PASS |
+| 3. Links and Banners | Verify that all the links and banners throughout the website are redirecting to correct pages and none of the links are broken. | By opening all the pages on the website and test to click all links and banners | PASS |
+| 4. Company logo | Verify that the company logo is clearly visible | Check if visible on all the pages | PASS |
+| 5. Text visibility | Verify that all the text on website are clearly visible | Opening every page on website and going through all text | PASS |
+| Filters - Marketplace | ------ | -------- | ------ |
+| 1. "Sort by" button | Verify that Sort by filtering dropdown button correctly responds when used | By clicking and switching sort by on marketplace page | PASS |
+| 2. "Sort by" button low to high  | Verify that Sort by filtering functionality correctly filters products based on the Price low to high and high to low | Applying sort by filter on the marketplace page | PASS |
+| 3. "Sort by" button A to Z | Verify that Sort by filtering functionality correctly filters products based on the name A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
+| 4. "Sort by" button category | Verify that Sort by filtering functionality correctly filters products based on the category A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
+| 5. Number of items  | Verify that piece count remains intact irrespective of sorting option applied | Applying sort by filter on the marketplace page and counting the items | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
+| ---- | ------ | -------- | PASS |
 
 ### Tests done in order to secure structural integrity
 
