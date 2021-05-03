@@ -253,12 +253,16 @@ I have done a lot of testing throughout the project and below you will find it i
 | 3. Links and Banners | Verify that all the links and banners throughout the website are redirecting to correct pages and none of the links are broken. | By opening all the pages on the website and test to click all links and banners | PASS |
 | 4. Company logo | Verify that the company logo is clearly visible | Check if visible on all the pages | PASS |
 | 5. Text visibility | Verify that all the text on website are clearly visible | Opening every page on website and going through all text | PASS |
+| 6. Explore button | Verify that the explore button on the home page takes you to the marketplace | By clicking on the explore button | PASS |
 | Filters - Marketplace | ------ | -------- | ------ |
 | 1. "Sort by" button | Verify that Sort by filtering dropdown button correctly responds when used | By clicking and switching sort by on marketplace page | PASS |
 | 2. "Sort by" button low to high  | Verify that Sort by filtering functionality correctly filters products based on the Price low to high and high to low | Applying sort by filter on the marketplace page | PASS |
 | 3. "Sort by" button A to Z | Verify that Sort by filtering functionality correctly filters products based on the name A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
 | 4. "Sort by" button category | Verify that Sort by filtering functionality correctly filters products based on the category A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
 | 5. Number of items  | Verify that piece count remains intact irrespective of sorting option applied | Applying sort by filter on the marketplace page and counting the items | PASS |
+| Search bar | ------ | -------- | ------ |
+| 1. Search | Verify search bars result | By trying different search terms such as name and category | PASS |
+| 2. Search | Verify results are all pieces matching search term | By comparing all pieces with the search term and the result it gives | PASS |
 | Purchase flow | ------ | -------- | ------ |
 | 1. Add to cart | Verify that the user can add to cart with one or more pieces | By adding the pieces to the cart | PASS |
 | 2. Add to cart | Verify that the user cannot add more than the max amount of the piece, should cause an error | Adding 100 items of a piece | PASS |
@@ -279,6 +283,7 @@ I have done a lot of testing throughout the project and below you will find it i
 | 1. Sign in button | Verify that button initiates sign in after filling out form correctly | By filling in correct info and click log in | PASS |
 | 2. Sign in link | Verify that link to forgot password takes user to forgot password page | By clicking the link in the sign in form | PASS |
 | Log out | ------ | -------- | ------ |
+| 1. Button | Verify that it works to log out via the log out button | By clicking log out when logged in | PASS |
 | Logged in user functionalities | ------ | -------- | ------ |
 | 1. Favourite list | Verify that users can add products to the favourite list which appear on profile | By pressing heart icon on piece and checking account page | PASS |
 | 2. Favourite list | Verify that users can remove products from the favourite list both on the piece itself | By pressing broken heart icon, but also remove directly from account page | PASS |
@@ -287,10 +292,11 @@ I have done a lot of testing throughout the project and below you will find it i
 | 1. Comments | Verify that a user who is not logged in cannot create comments | By checking a piece detail page without being logged in | PASS |
 | 2. Favourite list | Verify that a user who is not logged in cannot add favourites | By checking a piece detail page without being logged in | PASS |
 | Profile | ------ | -------- | ------ |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
-| ---- | ------ | -------- | PASS |
+| 1. Favourites | Verify that favourites are showing on the account page which was added | By clicking on favourite icon on piece detail page and checking account page | PASS |
+| 2. Favourites | Verify that it is possible to remove favourite directly | By clicking "x" next to a favourite in account page | PASS |
+| 3. Favourites | Verify that the name of the piece is a link which leads to the specific piece | By clicking the name of piece in favourite link | PASS |
+| 4. Order history | Verify that order history is correctly saved in account and shows correct information about the order | By clicking on link for order number and comparing information with the actual purchase | PASS |
+| 5. Account info | Verify that it is possible to update account information and it shows up on checkout page | By updating account info and check info on checkout page | PASS |
 | FAQ | ------ | -------- | PASS |
 | 1. FAQ page | Verify that the about page is working fine and displays text correctly | By entering the FAQ page | PASS |
 | About | ------ | -------- | ------ |
