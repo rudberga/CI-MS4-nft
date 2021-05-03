@@ -258,7 +258,7 @@ I have done a lot of testing throughout the project and below you will find it i
 | 3. "Sort by" button A to Z | Verify that Sort by filtering functionality correctly filters products based on the name A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
 | 4. "Sort by" button category | Verify that Sort by filtering functionality correctly filters products based on the category A-Z and Z-A | Applying sort by filter on the marketplace page | PASS |
 | 5. Number of items  | Verify that piece count remains intact irrespective of sorting option applied | Applying sort by filter on the marketplace page and counting the items | PASS |
-| Piece purchase flow | ------ | -------- | ------ |
+| Purchase flow | ------ | -------- | ------ |
 | 1. Add to cart | Verify that the user can add to cart with one or more pieces | By adding the pieces to the cart | PASS |
 | 2. Add to cart | Verify that the user cannot add more than the max amount of the piece, should cause an error | Adding 100 items of a piece | PASS |
 | 3. Cart toast | Verify that the toast that pops up when piece added to cart is showing correct info | By adding different pieces with different amounts to the cart | PASS |
