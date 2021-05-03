@@ -40,7 +40,7 @@
 {% endblock %}
 
     <title>nft. {% block extra_title %}{% endblock %}</title>
-    
+
 </head>
 
 <body>
@@ -66,8 +66,8 @@
                                 {% if request.user.is_authenticated %}
                                     <!-- Dropdown account menu when logged in -->
                                     <div class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle nav-profile hvr-fade" href="#" id="navbarDropdown"
-                                            role="button" data-toggle="dropdown" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle nav-profile hvr-fade" href="#"
+                                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                                             <i class="fas fa-user hvr-fade"></i>
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -97,9 +97,9 @@
                                     <p class="my-0 hvr-fade">
                                         <i class="fas fa-shopping-cart hvr-fade"></i>
                                         {% if grand_total %}
-                                            ${{ grand_total|floatformat:2 }}
+                                        ${{ grand_total|floatformat:2 }}
                                         {% else %}
-                                            $0.00
+                                        $0.00
                                         {% endif %}
                                     </p>
                                 </div>
@@ -197,12 +197,12 @@
             {% with message.level as level %}
                 {% if level == 40 %}
                     {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
                 {% endif %}
             {% endwith %}
         {% endfor %}
@@ -210,13 +210,9 @@
     {% endif %}
 
     {% block postloadjs %}
-
         <script type="text/javascript">
             $('.toast').toast('show');
         </script>
-
     {% endblock %}
-
 </body>
-
 </html>
