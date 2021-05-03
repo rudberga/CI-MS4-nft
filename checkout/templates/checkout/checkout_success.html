@@ -4,7 +4,7 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 {% endblock %}
 
 {% block page_header %}
@@ -21,12 +21,14 @@
         <div class="row">
             <div class="col">
                 <hr>
+                <!-- Order confirmation message -->
                 <h1 class="logo-font mb-4 text-center">Thank You &#127881;</h1>
                 <hr>
-                <p class="text-black">Your purchase has gone through and you will find more information below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <p class="text-black">Your purchase has gone through and you will find more information below. A
+                    confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
         </div>
-
+        <!-- Order summary -->
         <div class="row">
             <div class="col-12 col-lg-7">
                 <div class="order-confirmation-wrapper p-2 border">
@@ -188,20 +190,21 @@
             </div>
         </div>
         <div class="row">
-			<div class="col-12 col-lg-7 text-right">
+            <div class="col-12 col-lg-7 text-right">
+                <!-- Return after order summary -->
                 {% if from_profile %}
-                    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
-                        <span class="icon mr-2">
-                            <i class="fas fa-angle-left"></i>
-                        </span>
-                        <span class="text-uppercase">Back to Profile</span>
-                    </a>
+                <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                    <span class="icon mr-2">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
                 {% else %}
-                    <a href="{% url 'pieces' %}" class="btn keep-btn rounded-0 my-2">
-                        <span><i class="fas fa-chevron-left"></i> EXPLORE MORE ART</span>
-                    </a>
+                <a href="{% url 'pieces' %}" class="btn keep-btn rounded-0 my-2">
+                    <span><i class="fas fa-chevron-left"></i> EXPLORE MORE ART</span>
+                </a>
                 {% endif %}
-			</div>
-		</div>
+            </div>
+        </div>
     </div>
 {% endblock %}
