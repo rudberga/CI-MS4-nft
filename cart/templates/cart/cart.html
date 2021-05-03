@@ -10,7 +10,7 @@
                 <hr>
             </div>
         </div>
-
+        <!-- Cart items -->
         <div class="row">
             <div class="col">
                 {% if cart_items %}
@@ -30,9 +30,9 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                         {% if item.piece.media %}
-                                            <img class="w-100" src="{{ item.piece.media.url }}" alt="{{ item.piece.name }}">
+                                        <img class="w-100" src="{{ item.piece.media.url }}" alt="{{ item.piece.name }}">
                                         {% else %}
-                                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.piece.name }}">
+                                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.piece.name }}">
                                         {% endif %}
                                     </td>
                                     <td class="py-3">
@@ -48,7 +48,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
@@ -57,8 +57,7 @@
                                                     </div>
                                                     <input class="form-control form-control-sm qty_input" type="number"
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}"
-                                                        id="id_qty_{{ item.item_id }}">
+                                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
@@ -70,19 +69,25 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link update-icon"><small><i class="fas fa-check text-success" title="Update Quantity"></i></small></a>
-                                        <a class="remove-item" id="remove_{{ item.item_id }}"><small><i class="fas fa-trash-alt text-secondary" title="Delete from cart"></i></small></a>
+                                        <!-- Delete or update buttons -->
+                                        <a class="update-link update-icon"><small><i class="fas fa-check text-success"
+                                                    title="Update Quantity"></i></small></a>
+                                        <a class="remove-item" id="remove_{{ item.item_id }}"><small><i
+                                                    class="fas fa-trash-alt text-secondary"
+                                                    title="Delete from cart"></i></small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.piece.price }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
+                            <!-- Total amount -->
                             <tr>
                                 <td colspan="5" class="pt-5">
                                     <h5 class="checkout-total"><strong>TOTAL: ${{ grand_total|floatformat:2 }}</strong></h5>
                                 </td>
                             </tr>
+                            <!-- Buttons -->
                             <tr>
                                 <td colspan="5" class="text-right">
                                     <a href="{% url 'pieces' %}" class="keep-btn rounded-0 btn">
@@ -101,14 +106,15 @@
                             </tr>
                         </table>
                     </div>
-                {% else %}
-                    <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'pieces' %}" class="keep-btn rounded-0 btn">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span>KEEP SHOPPING</span>
-                    </a>
+                    <!-- When cart is empty, this message shows with a button -->
+                    {% else %}
+                        <p class="lead mb-5">Your cart is empty.</p>
+                        <a href="{% url 'pieces' %}" class="keep-btn rounded-0 btn">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>KEEP SHOPPING</span>
+                        </a>
                 {% endif %}
             </div>
         </div>
@@ -119,25 +125,27 @@
 {{ block.super }}
 {% include 'pieces/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+    <script type="text/javascript">
+        // Update quantity on click
+        $('.update-link').click(function (e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        })
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/cart/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        // Remove item and reload on click
+        $('.remove-item').click(function (e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = `/cart/remove/${itemId}/`;
+            var data = {
+                'csrfmiddlewaretoken': csrfToken
+            };
 
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
+            $.post(url, data)
+                .done(function () {
+                    location.reload();
+                });
+        })
+    </script>
 
 {% endblock %}
