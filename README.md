@@ -309,13 +309,11 @@ I have done a lot of testing throughout the project and below you will find it i
 
 #### Modals
 
-Each modal implemented on the website was tested on several screen sizes and confirmed that it kept its responsive design.
+Planned to implement modal for each authorization step but manage to finish sign up so far. The modal was tested on several screen sizes and confirmed that it kept its responsive design.
 
-This includes the modals for:
+This includes the modal for:
 
 - Log in
-- Sign up
-- Log out
 
 #### Fonts
 
@@ -423,7 +421,7 @@ The report shows that there are several undefined variables '$', this is caused 
 
 ### PEP8 - [Link](http://pep8online.com/)
 
-Pushed my Python code through PEP8 where only a few minor issues showed up, such as whitespace where it should not be. Everything is now solved and it does not show any issues anymore. 
+Pushed my Python code through PEP8 where only a few minor issues showed up, such as whitespace where it should not be and line too long. Code which is imported via Django will not be edited and might therefore give off a PEP8 error. Everything relevant is now solved and it does not show any issues anymore. 
 
 | Message | Solution |
 | ------- | -------- |
