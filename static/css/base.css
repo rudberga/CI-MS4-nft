@@ -135,6 +135,10 @@ body {
     height: 30%;
 }
 
+#for_sign {
+    cursor: pointer;
+}
+
 /*--------------------------------- Pieces page */
 
 .card {
