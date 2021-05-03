@@ -11,6 +11,11 @@ body {
     font-size: 5em;
 }
 
+.title-nft a {
+    color: #000;
+    text-decoration: none;
+}
+
 .header-main {
     position: relative;
     padding-top: 7px;
