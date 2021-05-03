@@ -10,27 +10,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-<div class="row">
-    <div class="col">
-        <h1 class="text-center about-title">ABOUT.</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center about-title">ABOUT.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center about-text">
+                <p>
+                    Hello and welcome! &#128515;&#128075;
+                </p>
+                <p>
+                    We are <strong>nft.</strong>, a platform created in 2021 for collectors who are interested in digital
+                    art. You can use our website to buy digital art as a NFT. If you wanna know more about NFT, please head
+                    over to our <a href="{% url 'faq' %}">FAQ</a>.
+                </p>
+                <p>
+                    We are constantly developing our website further and more functions will be implemented over time. Make
+                    sure to join our journey by signing up to our newsletter in the bottom of the page.
+                </p>
+                <p>
+                    Enjoy our website! &#127775;
+                </p>
+            </div>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col text-center about-text">
-        <p>
-            Hello and welcome! &#128515;&#128075;
-        </p>
-        <p>
-            We are <strong>nft.</strong>, a platform created in 2021 for collectors who are interested in digital art. You can use our website to buy digital art as a NFT. If you wanna know more about NFT, please head over to our <a href="{% url 'faq' %}">FAQ</a>.
-        </p>
-         <p>
-            We are constantly developing our website further and more functions will be implemented over time. Make sure to join our journey by signing up to our newsletter in the bottom of the page. 
-        </p>
-        <p>
-            Enjoy our website! &#127775;
-        </p>
-    </div>
-</div>
-</div>
 {% endblock %}
