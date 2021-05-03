@@ -9,5 +9,7 @@ def add_comments(request):
     comment = request.POST.get('comment')
     piece_name = request.POST.get('piece_name')
     piece_obj = Piece.objects.get(id=piece_name)
-    Comment.objects.create(user=request.user, piece=piece_obj, piece_comment=comment)
+    Comment.objects.create(user=request.user,
+                           piece=piece_obj,
+                           piece_comment=comment)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

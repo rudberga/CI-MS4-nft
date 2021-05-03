@@ -17,14 +17,17 @@ class Category(models.Model):
 
 
 class Piece(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True,
+                                 blank=True, on_delete=models.SET_NULL)
     id_number = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     artist = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    eth_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    eth_price = models.DecimalField(max_digits=6, decimal_places=2,
+                                    null=True, blank=True)
     type_of_piece = models.CharField(max_length=254, null=True, blank=True)
-    year = models.DecimalField(max_digits=4, decimal_places=0, null=True, blank=True)
+    year = models.DecimalField(max_digits=4, decimal_places=0,
+                               null=True, blank=True)
     media_url = models.URLField(max_length=1024, null=True, blank=True)
     media = models.ImageField(null=True, blank=True)
 

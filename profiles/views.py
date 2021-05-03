@@ -9,6 +9,7 @@ from allauth.account.forms import LoginForm
 
 from checkout.models import Order
 
+
 @login_required
 def profile(request):
     """ Display the user's profile. """
@@ -20,7 +21,8 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request,
+                           'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()

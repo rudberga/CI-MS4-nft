@@ -34,7 +34,7 @@ def all_pieces(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             pieces = pieces.order_by(sortkey)
-        
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             pieces = pieces.filter(category__name__in=categories)
@@ -43,9 +43,10 @@ def all_pieces(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You forgot to enter any search criteria!")
+                messages.error(request,
+                               "You forgot to enter any search criteria!")
                 return redirect(reverse('pieces'))
-           
+
             queries = Q(name__icontains=query) | Q(type_of_piece__icontains=query)
             pieces = pieces.filter(queries)
 
@@ -96,7 +97,7 @@ def add_piece(request):
             messages.error(request, 'Failed to add piece. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'pieces/add_piece.html'
     context = {
         'form': form,
