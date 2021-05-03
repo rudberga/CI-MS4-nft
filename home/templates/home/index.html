@@ -4,12 +4,10 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col video-wrapper" align="center">
+            <div class="col video-wrapper">
                 <div class="video-overlay">
-                    <a href="{% url 'pieces' %}">
-                        <button type="button" class="hvr-fade btn-explore">
-                            <strong>EXPLORE</strong>
-                        </button>
+                    <a href="{% url 'pieces' %}" class="btn hvr-fade btn-explore">
+                       <strong>EXPLORE</strong>
                     </a>
                 </div>
                 <!-- CREDIT for video in HTML: https://www.w3schools.com/html/html5_video.asp -->

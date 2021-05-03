@@ -106,10 +106,16 @@ body {
     text-decoration: underline;
 }
 
+.btn-explore:focus, .btn-explore:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
 /*CREDIT for responsive button over video: https://stackoverflow.com/questions/35647044/boostrap-how-to-stick-a-button-over-an-image-when-re-sizing/35676474 */
 
 .video-wrapper {
     position: relative;
+    text-align: center;
 }
 
 .video-responsive {
