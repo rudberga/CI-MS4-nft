@@ -664,6 +664,9 @@ In order to deploy this project to Heroku you will be needing some pre-requisite
 
 I have modified these code snippets in order for them to work in my project.
 - Hovering over social links and icons: [Ian Lunn](https://ianlunn.github.io/Hover/#effects)
+- Video responsiveness on home page: [W3 Schools](https://www.w3schools.com/html/html5_video.asp)
+- Responsive button over video on home page [StackOverflow](https://stackoverflow.com/questions/35647044/boostrap-how-to-stick-a-button-over-an-image-when-re-sizing/35676474)
+- Documentations for Bootstrap and jQuery
 
 ### Disclaimer
 
