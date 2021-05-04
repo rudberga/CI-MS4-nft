@@ -563,7 +563,7 @@ In order to deploy this project to Heroku you will be needing some pre-requisite
    
    `pip3 install Gunicorn (replace Gunicorn the library that needs to be installed)`
 
-8. In `settings.py` comment out the database configuration. Add this instead (formatted correctly):
+8. In `settings.py` comment out the database configuration. Add this instead:
 
    `DATABASES = { 'default': dj_database_url.parse(os.environ.get('< Your DATABASE_URL here >')) }`
    
@@ -607,6 +607,46 @@ In order to deploy this project to Heroku you will be needing some pre-requisite
     | STRIPE_WH_SECRET_SUB | your own STRIPE_WH_SECRET_SUB |
     | USE_AWS	| True |
     | ALLOWED_HOSTS	| your own ALLOWED_HOSTS |
+
+12. Create a Procfile and fill in this into the file:
+    
+    `$ web: gunicorn web: gunicorn nft.wsgi:application`
+
+13. Freeze your requirements:
+
+    `pip3 freeze > requirements.txt`
+    
+14. **Add**, **Commit** and **Push** all of this to Github.
+
+15. Add this code to `settings.py` in order to config the AWS settings
+    ```
+    if 'USE_AWS' in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'your-project'
+    AWS_S3_REGION_NAME = 'your-server'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files storage
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+    
+16. Go to Heroku website and connect the app with your GitHub repository. 
+    This is done via clicking **Deploy** on dashboard, then next to **Deployment Method** connect your GitHub repository.
+    
+17. You may now do the first push to Heroku with the command:
+    
+    `git push heroku master`
+    
+18. The app should now build and be deployed via Heroku on a link like [https://rudberga-nft.herokuapp.com/](https://rudberga-nft.herokuapp.com/)
 
 ## Credits
 
