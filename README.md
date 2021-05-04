@@ -489,7 +489,7 @@ In order to run this project locally you will be needing some pre-requisites, wh
 
    `python3 manage.py createsuperuser`
    
-8. Now we need to upload data to the database which you will do with the command:
+8. Now we need to upload data to the database locally which you will do with the command:
 
    `python3 manage.py loaddata db.json`
 
@@ -528,7 +528,85 @@ In order to run this project locally you will be needing some pre-requisites, wh
    
 13. Application port 8000 should now be open and you should be able to open it and see the website running.
    
+### Heroku deployment
 
+In order to deploy this project to Heroku you will be needing some pre-requisites (other than mentioned earlier), which are:
+
+- **AWS** - account with [Amazon Web Services](https://aws.amazon.com/)
+- **S3 bucket** - create a [S3 bucket](https://aws.amazon.com/s3/) on AWS to hold Static and media files
+- **Heroku** - create an Heroku account where you will deploy your application
+
+#### Steps
+
+1. Log in to Heroku website
+
+2. Create a new app by clicking **New** then **Create new app**
+
+3. Choose name that is corresponding to the name of your application
+
+4. Pick server closest to where you are located
+
+5. In order to deploy to Heroku, we need to move our database from SQLite to **Heroku Postgres**. 
+   Go to resources on Heroku and search for **Heroku Postgres**.
+
+6. Add **Heroku Postgres** to the application and select **Hobby dev - free** when being asked
+
+7. In order for this move from SQLite database to Heroku Postgres, we need to make sure that the libraries below are installed:
+
+   - Gunicorn
+   - dj-database-url
+   - Psycopg
+   
+   They should already be installed as you installed the requirements.txt, however, please make sure they are before proceeding to next step.
+   
+   If not installed, please install them by command:
+   
+   `pip3 install Gunicorn (replace Gunicorn the library that needs to be installed)`
+
+8. In `settings.py` comment out the database configuration. Add this instead (formatted correctly):
+
+   `DATABASES = { 'default': dj_database_url.parse(os.environ.get('< Your DATABASE_URL here >')) }`
+   
+   You will find your DATABASE_URL in Heroku under **Settings** and click **Reveal config vars**.
+ 
+9. Migrate with the command:
+
+   `python3 manage.py migrate`
+   
+10. After migrations are done, update your `settings.py` to look like below.
+    The reason for this is for using Postgres in deployment and SQLite in development.
+
+    ```
+        if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+         DATABASES = {
+             'default': {
+                 'ENGINE': 'django.db.backends.sqlite3',
+                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+             }
+         }
+    ```
+    
+11. Go to Heroku settings and **reveal config vars**, in there you will need to fill in your variables. 
+    These are the ones you need to fill in:
+    
+    | KEY        | VALUE           |
+    | ------------- |:-------------:| 
+    | AWS_ACCESS_KEY_ID | your own AWS_ACCESS_KEY_ID | 
+    | AWS_SECRET_ACCESS_KEY	| your own AWS_SECRET_ACCESS_KEY | 
+    | DATABASE_URL	| Heroku generates this | 
+    | EMAIL_HOST_PASS	| your own EMAIL_HOST_PASS | 
+    | EMAIL_HOST_USER	| your own EMAIL_HOST_USER | 
+    | SECRET_KEY | your own SECRET_KEY | 
+    | STRIPE_PUBLIC_KEY	| your own STRIPE_PUBLIC_KEY | 
+    | STRIPE_SECRET_KEY | your own STRIPE_SECRET_KEY |
+    | STRIPE_WH_SECRET_CH	| your own STRIPE_WH_SECRET_CH |
+    | STRIPE_WH_SECRET_SUB | your own STRIPE_WH_SECRET_SUB |
+    | USE_AWS	| True |
+    | ALLOWED_HOSTS	| your own ALLOWED_HOSTS |
 
 ## Credits
 
