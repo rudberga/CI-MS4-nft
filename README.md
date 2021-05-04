@@ -497,30 +497,30 @@ In order to run this project locally you will be needing some pre-requisites, wh
 
 10. Create a file called:
 
-   `env.py`
+    `env.py`
 
-  This is where we will store the variables. Make sure to add this file to your .gitignore in order to not show the variables publicly.
+    This is where we will store the variables. Make sure to add this file to your .gitignore in order to not show the variables publicly.
   
 11. Inside the `env.py` file, enter the following variables:
 
-   `os.environ.setdefault('SECRET_KEY', '<your variable>')`
-   
-   `os.environ.setdefault('DEVELOPMENT', '1')`
-   
-   `os.environ.setdefault('ALLOWED_HOSTS', '<your variable>')`
-   
-   `os.environ.setdefault('STRIPE_PUBLIC_KEY', '<your variable>')`
-   
-   `os.environ.setdefault('STRIPE_SECRET_KEY', '<your variable>')`
-   
-   `os.environ.setdefault('STRIPE_WH_SECRET_CH', '<your variable>')`
-   
-   `os.environ.setdefault('STRIPE_WH_SECRET_SUB', '<your variable>')`
-   
-    What these variables come from:
-    
-    - `SECRET_KEY` is set freely by yourself, recommended to be done with the help of a Django secret key generator
-    - `STRIPE` is found in your Stripe account under API values (Overview > Get your test API keys) 
+    `os.environ.setdefault('SECRET_KEY', '<your variable>')`
+
+    `os.environ.setdefault('DEVELOPMENT', '1')`
+
+    `os.environ.setdefault('ALLOWED_HOSTS', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_PUBLIC_KEY', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_SECRET_KEY', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_WH_SECRET_CH', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_WH_SECRET_SUB', '<your variable>')`
+
+     What these variables come from:
+
+     - `SECRET_KEY` is set freely by yourself, recommended to be done with the help of a Django secret key generator
+     - `STRIPE` is found in your Stripe account under API values (Overview > Get your test API keys) 
 
 12. Time to run the application. You will do this by using the command:
 
