@@ -424,6 +424,8 @@ Pushed my Python code through PEP8 where only a few minor issues showed up, such
 | ------- | -------- |
 | Line too long | Found a way to split the line |
 
+I have actively chosen to ignore two "line too long" pep8 issues which is found in the webhook_handler, this is because I cannot shorten it without making it very unclear for readers.
+
 ### User stories result
 
 All of the testing and debugging above have left us with the result below on achieving the goal of our user stories listed in the top of this readme:
