@@ -6,7 +6,8 @@
 
 {% block inner_content %}
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<h2 class="logo-font mb-4">{% trans "Yay! You want to sign up? &#128515;&#128075;" %}</h2>
+<hr>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
