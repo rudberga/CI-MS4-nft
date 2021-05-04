@@ -443,6 +443,80 @@ In order to deploy my website I used Heroku. The deployment was made from the ma
 
 ### Running my project locally
 
+In order to run this project locally you will be needing some pre-requisites, which are:
+
+- **IDE** - of your choice (e.g. Gitpod) where you can write Python
+
+- **GIT** - for version control
+
+- **PIP** - to install packages
+
+- **STRIPE Account** - to handle the payments
+
+#### Steps
+
+1. Go to the project repository which is here: [https://github.com/rudberga/CI-MS4-nft](https://github.com/rudberga/CI-MS4-nft)
+
+2. You can download the repository code by either:
+   - Clicking the "Code"- button up on the right in the repository and download code as a ZIP
+   - Clone the repository directly in your IDE by running the command: 
+   
+    `gh repo clone rudberga/CI-MS3-calm`
+
+3. Inside of your IDE, navigate to the directory where you have the repository locally, you do this by the command:
+
+   `cd folder/folder/code` you replace "folder" with your own path
+   
+4. Time for you to activate your virtual environment. You will be doing this by using Python's venv.
+
+   Enter the following into the CLI:
+
+   MAC: `source .venv/bin/activate`
+   
+   PC: `.venv\Scripts\activate.bat`
+   
+5. Install all requirements that you need for the project to work properly. Do this by the following command:
+
+   `pip3 install -r requirements.txt`
+   
+   This will install all the requirements from the [requirements.txt](https://github.com/rudberga/CI-MS4-nft/blob/master/requirements.txt) file.
+   
+6. In order to make the project work correctly, we need a env.py file to enter all the environmental variables. You could either set this up straight in the IDE variables but the settings are differente depending on which IDE you use, therefore, in this guide we will create a separate file for it. 
+
+7. Create a file called:
+
+   `env.py`
+
+  This is where we will store the variables. Make sure to add this file to your .gitignore in order to not show the variables publicly.
+  
+8. Inside the `env.py` file, enter the following variables:
+
+   `os.environ.setdefault('SECRET_KEY', '<your variable>')`
+   
+   `os.environ.setdefault('DEVELOPMENT', '1')`
+   
+   `os.environ.setdefault('ALLOWED_HOSTS', '<your variable>')`
+   
+   `os.environ.setdefault('STRIPE_PUBLIC_KEY', '<your variable>')`
+   
+   `os.environ.setdefault('STRIPE_SECRET_KEY', '<your variable>')`
+   
+   `os.environ.setdefault('STRIPE_WH_SECRET_CH', '<your variable>')`
+   
+   `os.environ.setdefault('STRIPE_WH_SECRET_SUB', '<your variable>')`
+   
+    What these variables come from:
+    
+    - `SECRET_KEY` is set freely by yourself, recommended to be done with the help of a Django secret key generator
+    - `STRIPE` is found in your Stripe account under API values (Overview > Get your test API keys) 
+
+9. Time to run the application. You will do this by using the command:
+
+   `python3 manage.py runserver`
+   
+10. Application port 8000 should now be open and you should be able to open it and see the website running.
+   
+
 
 ## Credits
 
