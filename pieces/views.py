@@ -47,7 +47,8 @@ def all_pieces(request):
                                "You forgot to enter any search criteria!")
                 return redirect(reverse('pieces'))
 
-            queries = Q(name__icontains=query) | Q(type_of_piece__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                                                type_of_piece__icontains=query)
             pieces = pieces.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -94,7 +95,8 @@ def add_piece(request):
             messages.success(request, 'Successfully added piece!')
             return redirect(reverse('add_piece'))
         else:
-            messages.error(request, 'Failed to add piece. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add piece. Control the form.')
     else:
         form = ProductForm()
 
@@ -121,7 +123,8 @@ def edit_piece(request, piece_id):
             messages.success(request, 'Successfully updated piece!')
             return redirect(reverse('piece_detail', args=[piece.id]))
         else:
-            messages.error(request, 'Failed to update piece. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to update piece. Control the form.')
     else:
         form = ProductForm(instance=piece)
         messages.info(request, f'You are editing {piece.name}')
