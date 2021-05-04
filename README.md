@@ -664,6 +664,7 @@ I have modified these code snippets in order for them to work in my project.
 - Video responsiveness on home page: [W3 Schools](https://www.w3schools.com/html/html5_video.asp)
 - Responsive button over video on home page [StackOverflow](https://stackoverflow.com/questions/35647044/boostrap-how-to-stick-a-button-over-an-image-when-re-sizing/35676474)
 - Documentations for Bootstrap and jQuery
+- Parts of code, although adjusted, imported from the Boutique Ado project created by Code Institue
 
 ### Disclaimer
 
