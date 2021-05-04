@@ -231,9 +231,6 @@ I have therefore focused on below palette
 - [Stripe](https://stripe.com/)
    - Used for payments in the application
 
-- [Stripe](https://stripe.com/)
-   - Used for payments in the application
-
 - [Balsamiq](https://balsamiq.com/)
    - Used for creating wireframes for the project
    
@@ -424,6 +421,8 @@ Pushed my Python code through PEP8 where only a few minor issues showed up, such
 | ------- | -------- |
 | Line too long | Found a way to split the line |
 
+I have actively chosen to ignore two "line too long" pep8 issues which is found in the webhook_handler, this is because I cannot shorten it without making it very unclear for readers.
+
 ### User stories result
 
 All of the testing and debugging above have left us with the result below on achieving the goal of our user stories listed in the top of this readme:
@@ -441,6 +440,210 @@ In order to deploy my website I used Heroku. The deployment was made from the ma
 
 ### Running my project locally
 
+In order to run this project locally you will be needing some pre-requisites, which are:
+
+- **IDE** - of your choice (e.g. Gitpod) where you can write Python
+
+- **GIT** - for version control
+
+- **PIP** - to install packages
+
+- **STRIPE Account** - to handle the payments
+
+#### Steps
+
+1. Go to the project repository which is here: [https://github.com/rudberga/CI-MS4-nft](https://github.com/rudberga/CI-MS4-nft)
+
+2. You can download the repository code by either:
+   - Clicking the "Code"- button up on the right in the repository and download code as a ZIP
+   - Clone the repository directly in your IDE by running the command: 
+   
+    `gh repo clone rudberga/CI-MS3-calm`
+
+3. Inside of your IDE, navigate to the directory where you have the repository locally, you do this by the command:
+
+   `cd folder/folder/code` you replace "folder" with your own path
+   
+4. Time for you to activate your virtual environment. You will be doing this by using Python's venv.
+
+   Enter the following into the CLI:
+
+   MAC: `source .venv/bin/activate`
+   
+   PC: `.venv\Scripts\activate.bat`
+   
+5. Install all requirements that you need for the project to work properly. Do this by the following command:
+
+   `pip3 install -r requirements.txt`
+   
+   This will install all the requirements from the [requirements.txt](https://github.com/rudberga/CI-MS4-nft/blob/master/requirements.txt) file.
+
+6. Migrate models with the command:
+
+   `python3 manage.py migrate`
+   
+7. Create the superuser in order to handle admin tasks:
+
+   `python3 manage.py createsuperuser`
+   
+8. Now we need to upload data to the database locally which you will do with the command:
+
+   `python3 manage.py loaddata db.json`
+
+9. In order to make the project work correctly, we need a env.py file to enter all the environmental variables. You could either set this up straight in the IDE variables but the settings are differente depending on which IDE you use, therefore, in this guide we will create a separate file for it. 
+
+10. Create a file called:
+
+    `env.py`
+
+    This is where we will store the variables. Make sure to add this file to your .gitignore in order to not show the variables publicly.
+  
+11. Inside the `env.py` file, enter the following variables:
+
+    `os.environ.setdefault('SECRET_KEY', '<your variable>')`
+
+    `os.environ.setdefault('DEVELOPMENT', '1')`
+
+    `os.environ.setdefault('ALLOWED_HOSTS', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_PUBLIC_KEY', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_SECRET_KEY', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_WH_SECRET_CH', '<your variable>')`
+
+    `os.environ.setdefault('STRIPE_WH_SECRET_SUB', '<your variable>')`
+
+     What these variables come from:
+
+     - `SECRET_KEY` is set freely by yourself, recommended to be done with the help of a Django secret key generator
+     - `STRIPE` is found in your Stripe account under API values (Overview > Get your test API keys) 
+
+12. Time to run the application. You will do this by using the command:
+
+   `python3 manage.py runserver`
+   
+13. Application port 8000 should now be open and you should be able to open it and see the website running.
+   
+### Heroku deployment
+
+In order to deploy this project to Heroku you will be needing some pre-requisites (other than mentioned earlier), which are:
+
+- **AWS** - account with [Amazon Web Services](https://aws.amazon.com/)
+- **S3 bucket** - create a [S3 bucket](https://aws.amazon.com/s3/) on AWS to hold Static and media files
+- **Heroku** - create an Heroku account where you will deploy your application
+
+#### Steps
+
+1. Log in to Heroku website
+
+2. Create a new app by clicking **New** then **Create new app**
+
+3. Choose name that is corresponding to the name of your application
+
+4. Pick server closest to where you are located
+
+5. In order to deploy to Heroku, we need to move our database from SQLite to **Heroku Postgres**. 
+   Go to resources on Heroku and search for **Heroku Postgres**.
+
+6. Add **Heroku Postgres** to the application and select **Hobby dev - free** when being asked
+
+7. In order for this move from SQLite database to Heroku Postgres, we need to make sure that the libraries below are installed:
+
+   - Gunicorn
+   - dj-database-url
+   - Psycopg
+   
+   They should already be installed as you installed the requirements.txt, however, please make sure they are before proceeding to next step.
+   
+   If not installed, please install them by command:
+   
+   `pip3 install Gunicorn (replace Gunicorn the library that needs to be installed)`
+
+8. In `settings.py` comment out the database configuration. Add this instead:
+
+   `DATABASES = { 'default': dj_database_url.parse(os.environ.get('< Your DATABASE_URL here >')) }`
+   
+   You will find your DATABASE_URL in Heroku under **Settings** and click **Reveal config vars**.
+ 
+9. Migrate with the command:
+
+   `python3 manage.py migrate`
+   
+10. After migrations are done, update your `settings.py` to look like below.
+    The reason for this is for using Postgres in deployment and SQLite in development.
+
+    ```
+        if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+         DATABASES = {
+             'default': {
+                 'ENGINE': 'django.db.backends.sqlite3',
+                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+             }
+         }
+    ```
+    
+11. Go to Heroku settings and **reveal config vars**, in there you will need to fill in your variables. 
+    These are the ones you need to fill in:
+    
+    | KEY        | VALUE           |
+    | ------------- |:-------------:| 
+    | AWS_ACCESS_KEY_ID | your own AWS_ACCESS_KEY_ID | 
+    | AWS_SECRET_ACCESS_KEY	| your own AWS_SECRET_ACCESS_KEY | 
+    | DATABASE_URL	| Heroku generates this | 
+    | EMAIL_HOST_PASS	| your own EMAIL_HOST_PASS | 
+    | EMAIL_HOST_USER	| your own EMAIL_HOST_USER | 
+    | SECRET_KEY | your own SECRET_KEY | 
+    | STRIPE_PUBLIC_KEY	| your own STRIPE_PUBLIC_KEY | 
+    | STRIPE_SECRET_KEY | your own STRIPE_SECRET_KEY |
+    | STRIPE_WH_SECRET_CH	| your own STRIPE_WH_SECRET_CH |
+    | STRIPE_WH_SECRET_SUB | your own STRIPE_WH_SECRET_SUB |
+    | USE_AWS	| True |
+    | ALLOWED_HOSTS	| your own ALLOWED_HOSTS |
+
+12. Create a Procfile and fill in this into the file:
+    
+    `$ web: gunicorn web: gunicorn nft.wsgi:application`
+
+13. Freeze your requirements:
+
+    `pip3 freeze > requirements.txt`
+    
+14. **Add**, **Commit** and **Push** all of this to Github.
+
+15. Add this code to `settings.py` in order to config the AWS settings
+    ```
+    if 'USE_AWS' in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'your-project'
+    AWS_S3_REGION_NAME = 'your-server'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files storage
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+    
+16. Go to Heroku website and connect the app with your GitHub repository. 
+    This is done via clicking **Deploy** on dashboard, then next to **Deployment Method** connect your GitHub repository.
+    
+17. You may now do the first push to Heroku with the command:
+    
+    `git push heroku master`
+    
+18. The app should now build and be deployed via Heroku on a link like [https://rudberga-nft.herokuapp.com/](https://rudberga-nft.herokuapp.com/)
 
 ## Credits
 
@@ -458,6 +661,9 @@ In order to deploy my website I used Heroku. The deployment was made from the ma
 
 I have modified these code snippets in order for them to work in my project.
 - Hovering over social links and icons: [Ian Lunn](https://ianlunn.github.io/Hover/#effects)
+- Video responsiveness on home page: [W3 Schools](https://www.w3schools.com/html/html5_video.asp)
+- Responsive button over video on home page [StackOverflow](https://stackoverflow.com/questions/35647044/boostrap-how-to-stick-a-button-over-an-image-when-re-sizing/35676474)
+- Documentations for Bootstrap and jQuery
 
 ### Disclaimer
 
