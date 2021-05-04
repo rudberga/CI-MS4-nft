@@ -231,9 +231,6 @@ I have therefore focused on below palette
 - [Stripe](https://stripe.com/)
    - Used for payments in the application
 
-- [Stripe](https://stripe.com/)
-   - Used for payments in the application
-
 - [Balsamiq](https://balsamiq.com/)
    - Used for creating wireframes for the project
    
