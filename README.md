@@ -480,16 +480,28 @@ In order to run this project locally you will be needing some pre-requisites, wh
    `pip3 install -r requirements.txt`
    
    This will install all the requirements from the [requirements.txt](https://github.com/rudberga/CI-MS4-nft/blob/master/requirements.txt) file.
-   
-6. In order to make the project work correctly, we need a env.py file to enter all the environmental variables. You could either set this up straight in the IDE variables but the settings are differente depending on which IDE you use, therefore, in this guide we will create a separate file for it. 
 
-7. Create a file called:
+6. Migrate models with the command:
+
+   `python3 manage.py migrate`
+   
+7. Create the superuser in order to handle admin tasks:
+
+   `python3 manage.py createsuperuser`
+   
+8. Now we need to upload data to the database which you will do with the command:
+
+   `python3 manage.py loaddata db.json`
+
+9. In order to make the project work correctly, we need a env.py file to enter all the environmental variables. You could either set this up straight in the IDE variables but the settings are differente depending on which IDE you use, therefore, in this guide we will create a separate file for it. 
+
+10. Create a file called:
 
    `env.py`
 
   This is where we will store the variables. Make sure to add this file to your .gitignore in order to not show the variables publicly.
   
-8. Inside the `env.py` file, enter the following variables:
+11. Inside the `env.py` file, enter the following variables:
 
    `os.environ.setdefault('SECRET_KEY', '<your variable>')`
    
@@ -510,11 +522,11 @@ In order to run this project locally you will be needing some pre-requisites, wh
     - `SECRET_KEY` is set freely by yourself, recommended to be done with the help of a Django secret key generator
     - `STRIPE` is found in your Stripe account under API values (Overview > Get your test API keys) 
 
-9. Time to run the application. You will do this by using the command:
+12. Time to run the application. You will do this by using the command:
 
    `python3 manage.py runserver`
    
-10. Application port 8000 should now be open and you should be able to open it and see the website running.
+13. Application port 8000 should now be open and you should be able to open it and see the website running.
    
 
 
