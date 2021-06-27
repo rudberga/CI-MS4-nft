@@ -390,8 +390,8 @@ Pushed my HTML code through the validator and got following messages which I cor
 
 | Message | Solution |
 | ------- | -------- |
-| The align attribute on the div element is obsolete. Use CSS instead. | Solved by removing align and positioning it in CSS |
-| The element button must not appear as a descendant of the a element. | Solved by creating a btn class with bootstrap |
+| The align attribute on the div element is obsolete. Use CSS instead | Solved by removing align and positioning it in CSS |
+| The element button must not appear as a descendant of the a element | Solved by creating a btn class with bootstrap |
 
 **IMPORTANT!** Because I am using the django templating language in this app, there is bound to show a lot of warnings and errors connected to that. These warnings and errors have been checked and controlled and are deemed to be safe to disregard as they are not true errors for the application.
 
