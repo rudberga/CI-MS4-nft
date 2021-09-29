@@ -135,7 +135,7 @@ I have chosen to implement a couple of emojis in this project to make it pop. As
 
 #### Colors
 
-The color theme is solely focused on black, white and grey. The reason for this is, as written above, I do not wanna take away from the art pieces.
+The color theme is solely focused on black, white and gray. The reason for this is, as written above, I do not wanna take away from the art pieces.
 
 I have therefore focused on below palette
 
