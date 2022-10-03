@@ -168,7 +168,7 @@ I have therefore focused on below palette
 
 ## Technologies Used 
 
-**Languages** 
+**Languages / Markup** 
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
     - Markup language
